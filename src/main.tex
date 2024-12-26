@@ -1,0 +1,188 @@
+%! Author = Eduardo Serna
+
+% Preamble
+\documentclass[twocolumn]{revtex4-2}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{graphicx} % For including images
+\usepackage{hyperref} % For hyperlinks
+\usepackage{amsfonts}
+\usepackage{caption} % For mathematical fonts
+
+\newcommand{\bn}[1]{\mbox{\boldmath $#1$}}
+
+% Document
+\begin{document}
+
+% Title Section
+    \title{Weak Localization in Mono-layer Graphene with Rashba Spin-Orbit Interaction}
+    \author{Eduardo Serna}
+    \email{sernaed95@gmail.com}
+    \affiliation{Dep. de Física y Matemáticas, Universidad Iberoamericana, CDMX 01219, México}.
+    \author{I. Rodríguez Vargas}
+    \email{isaac@fisica.uaz.edu.mx}
+    \affiliation{Unidad Académica de Física, Univ. Autónoma de Zacatecas, Zacatecas 98060, México}.
+    \author{L. Diago-Cisneros}
+    \email{ldiago@fisica.uh.cu}
+    \affiliation{Facultad de Física, Universidad de La Habana, La Habana 10400, Cuba}.
+    \date{26 December 2024}
+    \maketitle
+
+% Abstract
+    \begin{abstract}
+
+        In this work, we present a theoretical and computational analysis of the effects of Rashba-type spin-orbit interaction (SOIR) on the quantum dynamics and scattering of Dirac fermions (fD) in monolayer graphene (MLG). By using a Gaussian wave packet (GWP) approach, we calculate the temporal evolution of the GWP for various values of its wave number, initial energy, and potential barrier strength.
+        Our findings demonstrate that the SOIR induces changes in both the appearance and intensity of the transmission coefficient.
+        This is particularly significant because, in pristine MLG, no variations in the transmission coefficient had been observed under normal incidence.
+        Additionally, we propose a novel approach for calculating the probability current density of a Dirac fermion flow in MLG with channel interference, which has not been previously reported in the literature.
+    \end{abstract}
+
+% Table of Contents (optional)
+%    \tableofcontents
+%    \newpage
+
+% Introduction
+    \section{Introduction}\label{sec:introduction}
+
+        Monolayer graphene, a single layer of carbon atoms arranged in a honeycomb lattice, exhibits unique electronic properties stemming from quantum interference effects, spin-orbit interactions, and quantum dispersion.
+        These properties are vital for potential applications in spintronics and quantum computing.
+
+    \subsection{Weak Localization}\label{subsec:weak-localization}
+
+        Weak localization (WL) and weak antilocalization (WAL) are quantum phenomena arising from the interference of electron waves in disordered materials.
+         In graphene, these effects are heavily influenced by spin-orbit interactions (SOI), which describe the coupling between an electron's spin and its momentum.
+          Strong SOI can cause a transition from WL to WAL, modifying the phase coherence length (the distance over which electron waves maintain their phase relationship) and impacting electrical conductivity\cite{WeizheMaterials2017,AvsarNatCommun2014}.
+           This transition is crucial for understanding spin interactions within graphene and designing quantum devices.
+
+    \subsection{Rashba-Type Spin-Orbit Interaction}\label{subsec:rashba-type-spin-orbit-interaction}
+
+    Rashba-type SOI, originating from structural asymmetries in a material, can be significantly enhanced in graphene by proximity to other materials like transition metal dichalcogenides (TMDs) layered materials composed of a transition metal and two chalcogen atoms.
+     This interaction introduces a strong SOI without altering graphene's structure\cite{WangPhysRevX2016, AvsarNatCommun2014}.
+      The strength of this Rashba coupling affects phenomena such as spin-polarized-edge states (electrons at the material's edges possessing a preferred spin orientation) and is tunable using external electric fields.
+      This tunability is a key advantage for spintronic applications.
+
+    \subsection{Quantum Dispersion and Anomalous Hall Effect}\label{subsec:quantum-dispersion-and-anomalous-hall-effect}
+
+    These interactions also impact quantum dispersion, the relationship between an electron's energy and momentum.
+    The anomalous Hall effect (AHE), where a transverse voltage arises without an external magnetic field, has been observed in edge-bonded monolayer graphene\cite{LiuNano2023}.
+     This demonstrates both ordinary and anomalous Hall effects, indicating long-range ferromagnetic order (spontaneous alignment of electron spins) and suggesting applications in carbon-based spintronics\cite{YaoMater2024}.
+      The theoretical prediction of the quantum anomalous Hall (QAH) effect in graphene-based heterostructures further highlights the potential for hosting non-trivial topological phases.
+
+
+    Electrostatic potential and Rashba spin-orbit interaction dramatically alter electron transmission in graphene, even at perpendicular incidence, defying the Klein paradox.
+     This arises from the potential's creation of a classically forbidden region, SOIR's lifting of spin degeneracy and alteration of the heavy hole effective mass, spin-dependent scattering at interfaces, the formation of quasi-bound states leading to resonant tunneling, and the significant influence of the heavy hole's effective mass on tunneling behavior.
+      These factors, particularly the deviation from the Dirac point dispersion relation, significantly modify transmission, requiring further computational and experimental investigation to fully elucidate this phenomenon and refine our understanding of graphene electron transport.
+
+% Development
+    \section{Development}\label{sec:development}
+
+    \subsection{Physical Model}\label{subsec:physical-model}
+
+    A quantum channel was fabricated using a hexagonal boron nitride substrate, upon which monolayer graphene (MLG) was deposited and subsequently capped with a silicon dioxide layer.
+     Two metallic electrodes were incorporated to generate a perpendicular electric field, thereby confining a Gaussian wave packet (GWP) within the graphene.
+      A rectangular potential barrier, integrated within this channel, resulted in the creation of a spin-orbit interaction resonance (SOIR).
+
+    % TODO: Add 3D image
+
+    \subsection{Mathematical Model}\label{subsec:mathematical-model}
+
+    From the physical model, we can obtain a mathematical model which describes the temporal evolution and consequently the quantum dispersion of the fDs in the MLG.
+
+    Starting with the pristine graphene hamiltonian\cite{Geimk2007}:
+
+    \begin{equation}
+        \label{eq:pristGr}
+        \hat{\bn{H}}_G = v_{\mb{\tiny F}}\vec{\mathbf{\sigma}}\cdot\vec{p},
+    \end{equation}
+
+    \noindent with $\vec{\mathbf{\sigma}} = \hat{\mathbf{\sigma}}_{x}\hat{i} + \hat{\mathbf{\sigma}}_{y}\hat{j}$, being the pseudospin Pauli matrices $\hat{\mathbf{\sigma}}_{x} = \bigl(\begin{smallmatrix}0&1 \\ 1&0\end{smallmatrix} \bigr)$, $\hat{\sigma}_{y} = \bigl(\begin{smallmatrix}0&-i \\ i&0\end{smallmatrix} \bigr)$, and $\vec{p}=\hat{p}_{x}\hat{i}+\hat{p}_{y}\hat{j}$, the momentum operator, which $x, y$ components read $\hat{p}_{x} = -i\hbar\frac{\partial}{\partial x}$ and $\hat{p}_{y} = -i\hbar\frac{\partial}{\partial y}$, respectively.
+    From this point forward, $v_{\mb{\tiny F}}$ stands for the Fermi velocity of the carriers in MLG, which satisfies
+
+    \begin{equation}
+        \label{eq:vF}
+        v_{\mb{\tiny F}} \approx \frac{c}{300}.
+    \end{equation}
+
+    The previous hamiltonian can be rewritten as:
+
+\begin{equation}
+    \label{eq:pristineGrapheneMatrix}
+    \hat{\bn{H}}_G = -i\hbar v_{\mb{\tiny F}}
+    \begin{pmatrix}
+        0 & \frac{\partial}{\partial x}- i\frac{\partial}{\partial y}\\
+        \frac{\partial}{\partial x}+ i\frac{\partial}{\partial y} & 0
+    \end{pmatrix}.
+\end{equation}
+
+    Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (quasi-one dimensional) semiconductor hetero-structures can be extended to the context of MLG-Q1D\cite{RDiago2010, JAP2019}, it follows that the hamiltonian for the SOIR can be written as:
+
+    \begin{equation}
+        \label{eq:SOIRHamiltonian}
+        \hat{\bn{H}}_R =
+        \begin{pmatrix}
+            0 & k_{\alpha-} + k_{\beta-}\\
+            k_{\alpha+} + k_{\beta+} & 0
+        \end{pmatrix},
+    \end{equation}
+
+    \noindent where $k_{\alpha\pm} = \alpha\left(k_{\pm}^2/k_{\mp}\right)$ and $k_{\beta\pm} = \beta k_{\pm}^3$; also defining that $k_{\pm}=k_x\pm i k_y$ which are the initial wave numbers of the system.
+    The symbols $\alpha$ and $\beta$ represent the linear and cubic contribution of the SOIR respectively.
+    We are also taking into account that $\alpha = -\beta$, following the conclusions presented by Wong and Mireles\cite{WongUNAM2005}.
+
+    For this research, we assume the heavy holes only in the region defined by the potential barrier.
+
+    The potential barrier is defined only in the specified region.
+
+    % TODO: Add potential barrier figure
+
+    With the following hamiltonian:
+
+    \begin{equation}
+        \label{eq:potentialBarrierHamiltonian}
+        \hat{\bn{H}}_V=\bn{I}_2 V(x)
+    \end{equation}
+
+    Adding up the graphene\eqref{eq:pristineGrapheneMatrix}, the SOIR\eqref{eq:SOIRHamiltonian} and the potential barrier\eqref{eq:potentialBarrierHamiltonian} Hamiltonians, while also zeroing the parameters in the $y$ direction, we get:
+
+    \begin{equation}
+        \label{eq:hybridHamiltonian}
+        \hat{\bn{H}}=
+        \begin{pmatrix}
+            V(x) & \left(k_{\alpha-}+k_{\beta-}\right) - i\hbar v_{\mb{\tiny F}}\frac{\partial}{\partial x}\\
+            \left(k_{\alpha+}+k_{\beta+}\right) - i\hbar v_{\mb{\tiny F}}\frac{\partial}{\partial x} & V(x)
+        \end{pmatrix}.
+    \end{equation}
+
+    Note that if we wanted to see the results in the $y$ direction, we would have to zero the partial derivatives of $x$.
+
+    \subsection{Finite differences scheme}\label{subsec:finite-differences-scheme}
+
+    \subsection{High Performance Computing (HPC)}\label{subsec:high-performance-computing-(hpc)}
+
+    \subsection{Probability Current Density}\label{subsec:probability-current-density}
+
+
+% Discussion of Results
+    \section{Discussion of Results}\label{sec:discussion-of-results}
+
+        The observed behavior might be the result of one or more of the following aspects:
+
+    \begin{itemize}
+        \item Wave Packet Characteristics: Not a single momentum eigenstate.
+        \item Quantum interference effects\cite{MolgadoMex2018}
+        \item Weak localization: (might be only when having SOIR)
+    \end{itemize}
+
+% Conclusions
+    \section{Conclusions}\label{sec:conclusions}
+
+
+% Acknowledgments
+    \section*{Acknowledgments}
+
+% References
+    \bibliographystyle{apsrev4-2}
+    \bibliography{main}
+
+\end{document}
