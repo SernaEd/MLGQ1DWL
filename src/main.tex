@@ -8,9 +8,12 @@
 \usepackage{graphicx} % For including images
 \usepackage{hyperref} % For hyperlinks
 \usepackage{amsfonts}
-\usepackage{caption} % For mathematical fonts
+\usepackage{caption}
+\usepackage{mathtools} % For mathematical fonts
 
 \newcommand{\bn}[1]{\mbox{\boldmath $#1$}}
+
+\def\mb{\mbox}
 
 % Document
 \begin{document}
@@ -158,9 +161,41 @@
 
     \subsection{Finite differences scheme}\label{subsec:finite-differences-scheme}
 
-    \subsection{High Performance Computing (HPC)}\label{subsec:high-performance-computing-(hpc)}
+    La principal ecuación a resolver es la ecuación de Schrödinger dependiente del tiempo:
+
+    \begin{equation}
+        \label{eq:schrodingerTimeDependent}
+        i\hbar \frac{d}{dt}\bn{\Psi}(x,t) = \hat{\bn{H}}\bn{\Psi}(x,t)
+    \end{equation}
+
+    En nuestro caso consideramos un paquete de ondas gausiano (GWP) para cada componente del pseudoespinor $\bn{\Psi}(x,t)=\begin{psmallmatrix*}\psi_A(x,t)\\\psi_B(x,t)\end{psmallmatrix*}$.
+    El GWP en un tiempo inicial tiene la siguiente forma:
+
+    \begin{equation}
+        \label{eq:GWP}
+        \psi_j(x,t_0)=\frac{\xi_j}{\sqrt[4]{\pi\sigma^2}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}e^{ixk_0}
+    \end{equation}
+
+    \noindent donde $\xi$ es la configuración inicial del pseudoespinor, $k_0$ es el número de onda inicial en $x$ y el subíndice $j$ indica la componente que se está usando.
+
+    Para el desarrollo de este artículo estamos ocupando las siguientes opciones de configuración del pseudoespinor:
+
+    \begin{equation}
+        \label{eq:pseudospinorConfigurations}
+        \xi=\begin{pmatrix} 1\\0
+        \end{pmatrix},\,\,\begin{pmatrix} 1\\1
+        \end{pmatrix},\,\,\begin{pmatrix} 1\\i
+        \end{pmatrix},\,\,\begin{pmatrix} 1\\e^{i\pi/4}
+        \end{pmatrix}
+    \end{equation}
+
+    Para la densidad de probabilidad
 
     \subsection{Probability Current Density}\label{subsec:probability-current-density}
+
+    \subsection{High Performance Computing (HPC)}\label{subsec:high-performance-computing-(hpc)}
+
+
 
 
 % Discussion of Results
@@ -183,6 +218,6 @@
 
 % References
     \bibliographystyle{apsrev4-2}
-    \bibliography{main}
+    \bibliography{/Users/Serkne/WebstormProjects/MLGQ1DWL/bib/main}
 
 \end{document}
