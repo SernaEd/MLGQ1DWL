@@ -9,7 +9,7 @@
 \usepackage{hyperref} % For hyperlinks
 \usepackage{amsfonts}
 \usepackage{caption}
-\usepackage{mathtools} % For mathematical fonts
+\usepackage{mathtools}
 
 \newcommand{\bn}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\mb}{\mbox}
@@ -34,11 +34,13 @@
 
 % Abstract
     \begin{abstract}
+        Este trabajo estudia los efectos de la interacción espín-órbita tipo Rashba (SOIR) en el transporte de fermiones de Dirac en grafeno monocapa mediante paquetes de onda gaussianos.
+        Se analiza la transmisión bajo distintas configuraciones de número de onda, energía y barrera de potencial.
+        Los resultados muestran que la SOIR distorsiona significativamente los patrones de transmisión, revelando fenómenos como la ruptura de la degeneración de espín, la formación de estados cuasi-ligados y la dispersión dependiente del espín.
 
-        In this work, we present a theoretical and computational analysis of the effects of Rashba-type spin-orbit interaction (SOIR) on the quantum dynamics and scattering of Dirac fermions (fD) in monolayer graphene (MLG). By using a Gaussian wave packet (GWP) approach, we calculate the temporal evolution of the GWP for various values of its wave number, initial energy, and potential barrier strength.
-        Our findings demonstrate that the SOIR induces changes in both the appearance and intensity of the transmission coefficient.
-        This is particularly significant because, in pristine MLG, no variations in the transmission coefficient had been observed under normal incidence.
-        Additionally, we propose a novel approach for calculating the probability current density of a Dirac fermion flow in MLG with channel interference, which has not been previously reported in the literature.
+        Además, se propone un modelo para calcular la densidad de corriente de probabilidad considerando la interferencia de canales y efectos de auto-interferencia cuántica.
+        Este modelo permite estudiar dinámicas de espín y diseñar dispositivos avanzados en espintrónica y computación cuántica.
+        Los hallazgos destacan la relevancia de comprender y controlar la SOIR para optimizar el transporte cuántico en grafeno y potenciar aplicaciones en materiales bidimensionales.
     \end{abstract}
 
 % Table of Contents (optional)
@@ -53,7 +55,7 @@
 
     \subsection{Weak Localization}\label{subsec:weak-localization}
 
-        Weak localization (WL) and weak antilocalization (WAL) are quantum phenomena arising from the interference of electron waves in disordered materials.
+        Weak localization (WL) and weak anti-localization (WAL) are quantum phenomena arising from the interference of electron waves in disordered materials.
          In graphene, these effects are heavily influenced by spin-orbit interactions (SOI), which describe the coupling between an electron's spin and its momentum.
           Strong SOI can cause a transition from WL to WAL, modifying the phase coherence length (the distance over which electron waves maintain their phase relationship) and impacting electrical conductivity\cite{WeizheMaterials2017,AvsarNatCommun2014}.
            This transition is crucial for understanding spin interactions within graphene and designing quantum devices.
@@ -90,14 +92,19 @@
         \begin{minipage}[t]{0.48\textwidth}
             \centering
             \includegraphics[width=\textwidth]{../assets/images/No-Rashba/TCoefficient(1.0,0)xalpha=0beta=0}
-            \captionof{figure}{Transmisión en grafeno prístino. En el eje vertical vemos el coeficiente de transmisión, y en el plano está la intensidad de la barrera de potencial en meV contra el número de onda inicial $\angstrom^{-1}$. Podemos ver que el coeficiente de transmisión se mantiene constante a lo largo de los diferentes valores de $k$, sin embargo, conforme la barrera de potencial aumenta, el coeficiente de transmisión disminuye. Desde $1$ hasta $0.990$.}
+            \captionof{figure}{Transmisión en grafeno prístino.
+            En el eje vertical vemos el coeficiente de transmisión, y en el plano está la intensidad de la barrera de potencial en meV contra el número de onda inicial $\angstrom^{-1}$.
+            Podemos ver que el coeficiente de transmisión se mantiene constante a lo largo de los diferentes valores de $k$, sin embargo, conforme la barrera de potencial aumenta, el coeficiente de transmisión disminuye.
+            Desde $1$ hasta $0.990$.}
             \label{fig:noRashba}
         \end{minipage}
         \hfill
         \begin{minipage}[t]{0.48\textwidth}
             \centering
             \includegraphics[width=\textwidth]{../assets/images/Rashba/TCoefficient(1.0,0)xalpha=0.2beta=-0.2}
-            \captionof{figure}{Transmisión considerando SOIR en la zona de la barrera de potencial. En este caso se observa que el coeficiente de transmisión varía drásticamente formando un patrón similar a una hoja semi-doblada. En el mapa de colores se observa claramente una tendencia.}
+            \captionof{figure}{Transmisión considerando SOIR en la zona de la barrera de potencial.
+            En este caso se observa que el coeficiente de transmisión varía drásticamente formando un patrón similar a una hoja semi-doblada.
+            En el mapa de colores se observa claramente una tendencia.}
             \label{fig:rashba}
         \end{minipage}
     \end{figure}
@@ -106,24 +113,43 @@
     Esta figura muestra una caída del coeficiente de transmisión conforme la intensidad de la barrera de potencial aumenta.
     Este resultado muestra una contradicción con lo que ya se especifíca en la literatura, en el grafeno se esperaría observar una transmisión total debido a las mismas propiedades del material\cite{horsell2008, Young2009}.
 
-    Por otro lado, tenemos la transmisión bajo presencia de SOIR.
+    The observed behavior might be the result of one or both of the following aspects:
+
+    \begin{itemize}
+        \item Wave Packet Characteristics:
+        Not a single momentum eigenstate.
+        Debido a que estamos ocupando paquetes de onda en la simulación, un detalle importante que surge es que existe la presencia de múltiples componentes de momentum y eso implica que algunos de ellos pueden causar interferencia con otros; causando un coeficiente de transmisión que difiere del de un sólo autoestado\cite{Staelens2021}.
+        Además, en nuestra simulación se está tomando en cuenta el tiempo.
+        Parte de la investigación a futuro es comprobar si el tiempo de fase o de tunelaje están directamente relacionados a la variación del coeficiente de transmisión observada en este trabajo.
+        \item Quantum interference effects\cite{MolgadoMex2018}.
+        Dependiendo del ancho del paquete y su amplitud, éste se puede dispersar con el tiempo y esto puede causar interferencia con sí mismo.
+        Conforme diferentes partes del GWP encuentran la barrera de potencial, estos pueden estar interfiriendo, causando fluctuaciones en el coeficiente de transmisión.
+    \end{itemize}
+
+    Por otro lado, tenemos la transmisión bajo presencia de SOIR (Fig.\ref{fig:rashba}).
     Es evidente que se forma una correlación: a mayor altura de la barrera de potencial y mayor el número de onda inicial del paquete de ondas, entonces menor será la transmisión.
     Sin embargo, el comportamiento interesante aquí es que conforme el valor de $k_0$ sea mayor, y $V_b$ sea menor; entonces se obtiene una transmisión más cercana a $1$.
 
-        The observed behavior might be the result of one or more of the following aspects:
+    A pesar de que la variación en el coeficiente de transmisión es mínima (del orden de $10^{-2}$), esta variación se podría explicar por la misma SOIR, los electrones con diferentes componentes del pseudoespinor interactúan con los de la otra componente.
+    Como ya se había observado antes\cite{Serna2019}, la SOIR puede variar por el número de onda inicial del GWP, de ahí se puede deducir que esta interacción causa la variación en el coeficiente de transmisión.
 
-    \begin{itemize}
-        \item Wave Packet Characteristics: Not a single momentum eigenstate.
-        \item Quantum interference effects\cite{MolgadoMex2018}
-        \item Weak localization: (might be only when having SOIR)
-    \end{itemize}
 
 % Conclusions
     \section{Conclusions}\label{sec:conclusions}
 
+Este trabajo analiza, teórica y computacionalmente, los efectos del acoplamiento espín-órbita tipo Rashba (SOIR) en la transmisión de electrones a través de una barrera de potencial en grafeno monocapa.
+Los resultados muestran que el SOIR altera significativamente los coeficientes de transmisión, generando patrones ausentes en grafeno prístino.
+Esto se debe posiblemente a la interacción entre el pseudoespinor de los electrones.
 
-% Acknowledgments
-    \section*{Acknowledgments}
+En grafeno prístino sin SOIR, la transmisión permanece cercana a la unidad, como se espera por la supresión del retroceso de electrones.
+Sin embargo, se observan pequeñas caídas en la transmisión por interferencias cuánticas en el paquete de onda gaussiano utilizado.
+Estas interferencias resaltan la sensibilidad del sistema y la necesidad de estudiar la relación entre el tiempo de fase y las propiedades de transporte.
+
+Con SOIR, emergen patrones complejos de transmisión relacionados con los parámetros de la barrera y el paquete de ondas, atribuibles a fenómenos como el levantamiento de la degeneración de espín y la dispersión espín-dependiente.
+Estos resultados subrayan la relevancia del SOIR para diseñar dispositivos cuánticos avanzados con aplicaciones en spintrónica y computación cuántica.
+
+%% Acknowledgments
+%    \section*{Acknowledgments}
 
 % References
     \bibliographystyle{apsrev4-2}
