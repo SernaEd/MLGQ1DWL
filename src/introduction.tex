@@ -1,0 +1,68 @@
+Understanding quantum dispersion in graphene, the correlation between energy levels and corresponding wave vectors, is crucial for unveiling graphene's remarkable electronic and transport properties.
+
+Graphene's distinctive two-dimensional honeycomb lattice structure leads to linear dispersion around the Dirac points.
+This results in massless Dirac fermions that display remarkable properties, including extremely high carrier mobility, ballistic transport across distances of several microns, and the lack of a bandgap in pristine graphene sheets\cite{Serna2019}.
+Insights into quantum dispersion are imperative not only for elucidating these intrinsic electronic characteristics but also for exploring quantum phenomena such as weak localization, spin-orbit interactions, and topologically protected quantum phases.
+These quantum effects form the foundation of advanced technological developments, particularly in areas like spintronics and quantum computing\cite{WeizheMaterials2017, AvsarNatCommun2014, LiuNano2023}.
+To accurately investigate and simulate the dynamics of charge carriers in graphene, the Schr\"odinger equation serves as a fundamental tool.
+As quantum mechanics dictate electron behavior at atomic scales, solving this equation provides crucial insights into energy-momentum relationships and quantum mechanical characteristics of electron transport.
+Moreover, accounting precisely for spin-related phenomena and spatial quantum interference effects requires analytically or numerically solving the Schr\"odinger equation under relevant physical conditions.
+Numerically, solving the Schr\"odinger equation frequently requires robust computational approaches.
+One prominent numerical method is the finite differences method (FDM), a discretization technique used to approximate continuous differential operators as algebraic equations solved computationally.
+FDM is particularly helpful due to its simplicity, computational efficiency, and versatility in handling complex boundary and potential configurations encountered in structural graphene studies-making it particularly suited for calculating electronic properties and energy dispersion relations.
+The primary objective of this work is to derive and numerically compute the energy dispersion relations for monolayer graphene, using the finite differences method applied to the Schr\"odinger equation.
+Specifically, this involves defining the model Hamiltonian representing charge carrier dynamics, discretizing the governing equations via FDM, and computationally obtaining dispersion curves.
+An accurate prediction of these energy dispersion relations provides essential insights into graphene's charge carrier dynamics and establishes a foundational knowledge base for engineering graphene-based materials and devices tailored to advanced electronic and spintronic applications.
+
+
+%\subsection{Weak Localization}\label{subsec:weak-localization}
+%
+%        Weak localization (WL) and weak antilocalization (WAL) are quantum phenomena arising from the interference of electron waves in disordered materials.
+%         In graphene, these effects are heavily influenced by spin-orbit interactions (SOI), which describe the coupling between an electron's spin and its momentum.
+%          Strong SOI can cause a transition from WL to WAL, modifying the phase coherence length (the distance over which electron waves maintain their phase relationship) and impacting electrical conductivity\cite{WeizheMaterials2017,AvsarNatCommun2014}.
+%           This transition is crucial for understanding spin interactions within graphene and designing quantum devices.
+
+    \subsection{Rashba-Type Spin-Orbit Interaction}\label{subsec:rashba-type-spin-orbit-interaction}
+
+Applying an electrostatic potential to graphene can create regions where electrons are classically forbidden due to energy constraints\cite{SoninPhysRevB2009}.
+For instance, a negative gate voltage can shift the Fermi level into the valence band, establishing a potential barrier that electrons do not have sufficient energy to overcome, according to classical physics\cite{DellAnnaJPhysCondMatt2018}.
+However, in graphene, electron transmission through such barriers can exhibit unusual behavior due to the Klein paradox.
+
+The Klein paradox describes the phenomenon where electrons in graphene can tunnel through electrostatic potential barriers with a probability approaching unity, even at perpendicular incidence, seemingly defying the principles of classical mechanics\cite{TrauzettelNature2007}.
+This counterintuitive transmission arises from the relativistic nature of electrons in graphene, where, within the barrier region, incident electrons can be converted into holes, allowing for unimpeded passage\cite{BernardiniJPhysAMathTheor2010}.
+The Klein paradox is a direct consequence of graphene's unique linear dispersion relation and the associated massless Dirac fermion behavior.
+While this perfect transmission through barriers might pose challenges for achieving electron confinement in some device designs, it also presents opportunities for developing novel tunneling-based electronic devices.
+Beyond simply creating a forbidden region, the application of electrostatic potential can dramatically alter electron transmission through various other mechanisms, influencing the refractive index and leading to phenomena like electron lensing\cite{ParedesPhysRevB2021}.
+
+Rashba spin-orbit interaction (RSOI) is a relativistic effect that arises in systems lacking structural inversion symmetry\cite{AvishaiPhysRevB2021}.
+In graphene, RSOI can be induced by an external electric field applied perpendicular to the graphene plane or through proximity to a substrate\cite{ShcherbakovSciAdv2021}.
+A key consequence of RSOI is the breaking of spin degeneracy, where the energy levels of electrons with opposite spins are no longer the same, even in the absence of an external magnetic field\cite{DelkhoshPhysE2015}.
+Controlling spin degeneracy through electric fields via Rashba spin-orbit interaction (RSOI) is particularly valuable for spintronic applications.
+It enables electron spin manipulation without depending on magnetic fields, which typically require more power and are challenging to incorporate effectively into nanoscale systems.
+
+
+Furthermore, RSOI modifies the effective mass of charge carriers in graphene.
+It can lead to the opening of an energy gap at the Dirac points, effectively giving the otherwise massless Dirac fermions a finite mass.
+In systems with strong spin-orbit coupling, such as certain heavy-hole systems, specific types of RSOI (like k³-Rashba spin-orbit coupling) can even result in anisotropic band structures and the emergence of additional spin-degeneracy points under light illumination.
+While this specific example refers to heavy holes, the principle that RSOI can significantly alter the band structure and effective mass of carriers is relevant to graphene, particularly when considering proximity-induced effects from substrates with strong spin-orbit coupling\cite{GindikinPhysRevB2025}.
+The modification of the effective mass by RSOI can profoundly impact graphene's transport properties, influencing carrier mobility and the density of states.
+Notably, tuning the strength of RSOI in graphene can even induce a transition from the Klein tunneling regime (perfect transmission) to the anti-Klein tunneling regime (perfect reflection) when electrons encounter a potential barrier.
+This ability to control the transmission probability through potential barriers using RSOI opens up exciting possibilities for creating novel electronic devices that leverage this fundamental quantum mechanical phenomenon\cite{YaoMater2024}.
+
+
+
+
+
+%    \subsection{Quantum Dispersion and Anomalous Hall Effect}\label{subsec:quantum-dispersion-and-anomalous-hall-effect}
+%
+%    These interactions also impact quantum dispersion, the relationship between an electron's energy and momentum.
+%    The anomalous Hall effect (AHE), where a transverse voltage arises without an external magnetic field, has been observed in edge-bonded monolayer graphene\cite{LiuNano2023}.
+%     This demonstrates both ordinary and anomalous Hall effects, indicating long-range ferromagnetic order (spontaneous alignment of electron spins) and suggesting applications in carbon-based spintronics\cite{YaoMater2024}.
+%      The theoretical prediction of the quantum anomalous Hall (QAH) effect in graphene-based heterostructures further highlights the potential for hosting non-trivial topological phases.
+%
+%
+%    Electrostatic potential and Rashba spin-orbit interaction dramatically alter electron transmission in graphene, even at perpendicular incidence, defying the Klein paradox.
+%
+%This results from the potential generating a classically forbidden region, SOIR breaking spin degeneracy and modifying the heavy hole's effective mass, spin-dependent scattering at interfaces, the emergence of quasi-bound states that enable resonant tunneling, and the heavy hole's effective mass playing a crucial role in tunneling dynamics.
+%
+%      These factors, particularly the deviation from the Dirac point dispersion relation, significantly modify transmission, requiring further computational and experimental investigation to fully elucidate this phenomenon and refine our understanding of graphene electron transport.

@@ -18,7 +18,7 @@
         \hat{\bn{H}}_G = v_{\mb{\tiny F}}\vec{\mathbf{\sigma}}\cdot\vec{p},
     \end{equation}
 
-    \noindent with $\vec{\mathbf{\sigma}} = \hat{\mathbf{\sigma}}_{x}\hat{\imath} + \hat{\mathbf{\sigma}}_{y}\hat{\jmath}$, being the pseudospin Pauli matrices $\hat{\mathbf{\sigma}}_{x} = \bigl(\begin{smallmatrix}0&1 \\ 1&0\end{smallmatrix} \bigr)$, $\hat{\sigma}_{y} = \bigl(\begin{smallmatrix}0&-i \\ i&0\end{smallmatrix} \bigr)$, and $\vec{p}=\hat{p}_{x}\hat{\imath}+\hat{p}_{y}\hat{\jmath}$, the momentum operator, which $x, y$ components read $\hat{p}_{x} = -i\hbar\frac{\partial}{\partial x}$ and $\hat{p}_{y} = -i\hbar\frac{\partial}{\partial y}$, respectively.
+    \noindent With $\vec{\mathbf{\sigma}} = \hat{\mathbf{\sigma}}_{x}\hat{\imath} + \hat{\mathbf{\sigma}}_{y}\hat{\jmath}$, being the pseudospin Pauli matrices $\hat{\mathbf{\sigma}}_{x} = \bigl(\begin{smallmatrix}0&1 \\ 1&0\end{smallmatrix} \bigr)$, $\hat{\sigma}_{y} = \bigl(\begin{smallmatrix}0&-i \\ i&0\end{smallmatrix} \bigr)$, and $\vec{p}=\hat{p}_{x}\hat{\imath}+\hat{p}_{y}\hat{\jmath}$, the momentum operator, which $x, y$ components read $\hat{p}_{x} = -i\hbar\frac{\partial}{\partial x}$ and $\hat{p}_{y} = -i\hbar\frac{\partial}{\partial y}$, respectively.
     From this point forward, $v_{\mb{\tiny F}}$ stands for the Fermi velocity of the carriers in MLG, which satisfies
 
     \begin{equation}
@@ -48,7 +48,7 @@
         \end{pmatrix},
     \end{equation}
 
-    \noindent where $k_{\alpha\pm} = \alpha\left(k_{\pm}^2/k_{\mp}\right)$ and $k_{\beta\pm} = \beta k_{\pm}^3$; also defining that $k_{\pm}=k_x\pm i k_y$ which are the initial wave numbers of the system.
+    \noindent Where $k_{\alpha\pm} = \alpha\left(k_{\pm}^2/k_{\mp}\right)$ and $k_{\beta\pm} = \beta k_{\pm}^3$; also defining that $k_{\pm}=k_x\pm i k_y$ which are the initial wave numbers of the system.
     The symbols $\alpha$ and $\beta$ represent the linear and cubic contribution of the SOIR respectively.
     We are also taking into account that $\alpha = -\beta$, following the conclusions presented by Wong and Mireles\cite{WongUNAM2005}.
 
@@ -95,7 +95,7 @@
         \psi_j(x,t_0)=\frac{\xi_j}{\sqrt[4]{\pi\sigma^2}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}e^{ixk_0}
     \end{equation}
 
-    \noindent donde $\xi$ es la configuración inicial del pseudoespinor, $k_0$ es el número de onda inicial en $x$ y el subíndice $j$ indica la componente que se está usando.
+    \noindent Donde $\xi$ es la configuración inicial del pseudoespinor, $k_0$ es el número de onda inicial en $x$ y el subíndice $j$ indica la componente que se está usando.
 
     Para el desarrollo de este artículo estamos ocupando las siguientes opciones de configuración del pseudoespinor:
 
@@ -132,7 +132,7 @@
         \bn{\Psi}(x,t)=\hat{U}(t,t_0)\bn{\Psi}(x,t_0)
     \end{equation}
 
-    \noindent podemos ver que al aplicar el operador, obtenemos un tiempo $t$ para un tiempo $t_0$.
+    \noindent Podemos ver que al aplicar el operador, obtenemos un tiempo $t$ para un tiempo $t_0$.
     Si se sustituye la ecuación del TEO\eqref{eq:TEOdifEq} en la ecuación de Schrödinger\eqref{eq:schrodingerTimeDependent}, se puede desarrollar el álgebra y resolver la ecuación diferencial obteniendo al TEO\@.
     Sabemos que el hamiltoniano no depende del tiempo, entonces podemos reescribir la ec.\eqref{eq:TEOdifEq} como:
     
@@ -141,7 +141,7 @@
         \bn{\Psi}(x,t)= e^{-\frac{i\delta t}{\hbar}\hat{\bn{H}}} \bn{\Psi}(x,t_0)
     \end{equation}
     
-    \noindent donde $\delta t$ es el paso en el tiempo que discretizaremos más adelante.
+    \noindent Donde $\delta t$ es el paso en el tiempo que discretizaremos más adelante.
     La exponencial anterior se puede aproximar a través de la serie de Taylor de primer orden como:
     
     \begin{equation}
@@ -156,7 +156,7 @@
         \bn{\Phi}(x,t_0) + \frac{i\delta t}{2\hbar}\hat{\bn{H}}\bn{\Phi}(x,t_0)=2\bn{\Psi}(x,t_0)
     \end{equation}
 
-    \noindent esta ecuación representa un sistema de ecuaciones de $2\times2$ (ya que tenemos dos incógnitas que son $\phi_A$ y $\phi_B$ y al desarrollar la matriz, podemos ver que se forman dos ecuaciones).
+    \noindent Esta ecuación representa un sistema de ecuaciones de $2\times2$ (ya que tenemos dos incógnitas que son $\phi_A$ y $\phi_B$ y al desarrollar la matriz, podemos ver que se forman dos ecuaciones).
 
     Como ambas ecuaciones tienen derivadas, ocupamos el método de diferencias finitas para resolver ambas ecuaciones para todo el espacio simultáneamente.
     Para realizar esto, primero discretizamos al sistema de ecuaciones\eqref{eq:systemOfEquations} a lo largo de todo el espacio $j$ desde $0$ hasta $J$.
@@ -178,7 +178,7 @@
         &=f(x_j)-\delta xf'(x_j)
     \end{align}
 
-    \noindent si restamos la segunda ecuación de la primera y despejamos, podemos encontrar las ``Diferencias Centradas'' que podemos discretizar también como:
+    \noindent Si restamos la segunda ecuación de la primera y despejamos, podemos encontrar las ``Diferencias Centradas'' que podemos discretizar también como:
 
     \begin{equation}
         \label{eq:diferenciasCentradas}
@@ -241,7 +241,7 @@
     \end{align}
     \end{widetext}
 
-    \noindent donde $N =1 + \frac{i\delta t}{2\hbar} \left( V_j + \left(k_{\alpha+,j}+k_{\beta+,j}\right)\right)$, $Q=\frac{i\hbar v_{\mb{\tiny F}}}{2\delta x}$ y $M =1 + \frac{i\delta t}{2\hbar}\left( V_j + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\right)$.
+    \noindent Donde $N =1 + \frac{i\delta t}{2\hbar} \left( V_j + \left(k_{\alpha+,j}+k_{\beta+,j}\right)\right)$, $Q=\frac{i\hbar v_{\mb{\tiny F}}}{2\delta x}$ y $M =1 + \frac{i\delta t}{2\hbar}\left( V_j + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\right)$.
     
     Como se puede ver, el tamaño de la matriz depende del tamaño de nuestro sistema.
     Si se escoge $\delta x = 1\angstrom$ entonces un pozo cuántico de $1200\angstrom$ generará una matriz de $1200\times1200$.
@@ -329,5 +329,5 @@
         T = \left| \frac{\vec{\jmath}_{out}\cdot\hat{n}}{\vec{\jmath}_{in}\cdot\hat{n}} \right|,
     \end{equation}
 
-    \noindent en este contexto, se realiza el cociente entre la corriente transmitida y la corriente incidente, considerando el producto con el vector normal a la barrera.
+    \noindent En este contexto, se realiza el cociente entre la corriente transmitida y la corriente incidente, considerando el producto con el vector normal a la barrera.
     En el caso unidimensional aquí abordado, dicho vector puede representarse como $(1,0)$ o $(0,1)$, dependiendo de si el paquete de onda gaussiano (GWP) se propaga a lo largo del eje $x$ o del eje $y$, respectivamente.

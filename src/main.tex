@@ -10,6 +10,8 @@
 \usepackage{amsfonts}
 \usepackage{caption}
 \usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \newcommand{\bn}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\mb}{\mbox}
@@ -22,25 +24,24 @@
     \title{Weak Localization in Mono-layer Graphene with Rashba Spin-Orbit Interaction}
     \author{Eduardo Serna}
     \email{sernaed95@gmail.com}
-    \affiliation{Centro de Investigación en Ciencias, Universidad Autónoma del Estado de Morelos, Morelos 62209, México}.
+    \affiliation{Centro de Investigación en Ciencias, Universidad Autónoma del Estado de Morelos, Morelos, 62209, México}.
     \author{I. Rodríguez Vargas}
     \email{isaac@fisica.uaz.edu.mx}
-    \affiliation{Unidad Académica de Física, Universidad Autónoma de Zacatecas, Zacatecas 98060, México}.
+    \affiliation{Unidad Académica de Física, Universidad Autónoma de Zacatecas, Zacatecas, 98060, México}.
     \author{L. Diago-Cisneros}
     \email{ldiago@fisica.uh.cu}
-    \affiliation{Facultad de Física, Universidad de La Habana, La Habana 10400, Cuba}.
+    \affiliation{Facultad de Física, Universidad de La Habana, La Habana, 10400, Cuba}.
     \date{26 December 2024}
     \maketitle
 
 % Abstract
     \begin{abstract}
-        Este trabajo estudia los efectos de la interacción espín-órbita tipo Rashba (SOIR) en el transporte de fermiones de Dirac en grafeno monocapa mediante paquetes de onda gaussianos.
-        Se analiza la transmisión bajo distintas configuraciones de número de onda, energía y barrera de potencial.
-        Los resultados muestran que la SOIR distorsiona significativamente los patrones de transmisión, revelando fenómenos como la ruptura de la degeneración de espín, la formación de estados cuasi-ligados y la dispersión dependiente del espín.
-
-        Además, se propone un modelo para calcular la densidad de corriente de probabilidad considerando la interferencia de canales y efectos de auto-interferencia cuántica.
-        Este modelo permite estudiar dinámicas de espín y diseñar dispositivos avanzados en espintrónica y computación cuántica.
-        Los hallazgos destacan la relevancia de comprender y controlar la SOIR para optimizar el transporte cuántico en grafeno y potenciar aplicaciones en materiales bidimensionales.
+        This paper presents a theoretical and computational study on the impact of Rashba spin-orbit interaction (SOIR) on electron transmission through a potential barrier in monolayer graphene.
+        The energy dispersion relations were numerically obtained via the finite differences method applied to the Schrödinger equation, using a model Hamiltonian incorporating graphene, SOIR, and a potential barrier.
+        Our findings reveal that the presence of SOIR significantly modifies the electron transmission coefficients compared with pristine graphene conditions.
+        While electron transmission in pristine graphene remains near unity with minor reductions due to quantum interference effects in a Gaussian wave packet, introducing SOIR leads to intricate transmission patterns dependent on the barrier parameters and wave packet characteristics.
+        These effects arise from phenomena such as spin degeneracy lifting and spin-dependent scattering mechanisms.
+        The results emphasize the critical role that SOIR plays in engineering sophisticated quantum devices, offering potential applications in spintronic technologies and quantum computing.
     \end{abstract}
 
 % Table of Contents (optional)
@@ -49,110 +50,38 @@
 
 % Introduction
     \section{Introduction}\label{sec:introduction}
-
-        Monolayer graphene, a single layer of carbon atoms arranged in a honeycomb lattice, exhibits unique electronic properties stemming from quantum interference effects, spin-orbit interactions, and quantum dispersion.
-        These properties are vital for potential applications in spintronics and quantum computing.
-
-    \subsection{Weak Localization}\label{subsec:weak-localization}
-
-        Weak localization (WL) and weak anti-localization (WAL) are quantum phenomena arising from the interference of electron waves in disordered materials.
-         In graphene, these effects are heavily influenced by spin-orbit interactions (SOI), which describe the coupling between an electron's spin and its momentum.
-          Strong SOI can cause a transition from WL to WAL, modifying the phase coherence length (the distance over which electron waves maintain their phase relationship) and impacting electrical conductivity\cite{WeizheMaterials2017,AvsarNatCommun2014}.
-           This transition is crucial for understanding spin interactions within graphene and designing quantum devices.
-
-    \subsection{Rashba-Type Spin-Orbit Interaction}\label{subsec:rashba-type-spin-orbit-interaction}
-
-    Rashba-type SOI, originating from structural asymmetries in a material, can be significantly enhanced in graphene by proximity to other materials like transition metal dichalcogenides (TMDs) layered materials composed of a transition metal and two chalcogen atoms.
-     This interaction introduces a strong SOI without altering graphene's structure\cite{WangPhysRevX2016, AvsarNatCommun2014}.
-      The strength of this Rashba coupling affects phenomena such as spin-polarized-edge states (electrons at the material's edges possessing a preferred spin orientation) and is tunable using external electric fields.
-      This tunability is a key advantage for spintronic applications.
-
-    \subsection{Quantum Dispersion and Anomalous Hall Effect}\label{subsec:quantum-dispersion-and-anomalous-hall-effect}
-
-    These interactions also impact quantum dispersion, the relationship between an electron's energy and momentum.
-    The anomalous Hall effect (AHE), where a transverse voltage arises without an external magnetic field, has been observed in edge-bonded monolayer graphene\cite{LiuNano2023}.
-     This demonstrates both ordinary and anomalous Hall effects, indicating long-range ferromagnetic order (spontaneous alignment of electron spins) and suggesting applications in carbon-based spintronics\cite{YaoMater2024}.
-      The theoretical prediction of the quantum anomalous Hall (QAH) effect in graphene-based heterostructures further highlights the potential for hosting non-trivial topological phases.
-
-
-    Electrostatic potential and Rashba spin-orbit interaction dramatically alter electron transmission in graphene, even at perpendicular incidence, defying the Klein paradox.
-    The observed phenomenon results from several interacting factors: the creation of a classically forbidden region by the Potential, SOIR-induced spin degeneracy lifting and heavy hole effective mass alteration, spin-dependent interphase scattering, the formation of quasi-bound states leading to resonant tunneling, and the significant impact of the heavy hole effective mass on tunneling characteristics.
-    These factors, particularly the deviation from the Dirac point dispersion relation, significantly modify transmission, requiring further computational and experimental investigation to fully elucidate this phenomenon and refine our understanding of graphene electron transport.
+    \input{introduction}
 
 % Development
     \section{Development}\label{sec:development}
     \input{development}
 
     \section{Discussion of Results}\label{sec:discussion-of-results}
+    \input{discussion-of-results}
 
-    A continuación se muestran las figuras obtenidas con el procedimiento obtenido anteriormente.
-
-    \begin{figure}[h!]
-        \centering
-        \begin{minipage}[t]{0.48\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{../assets/images/No-Rashba/TCoefficient(1.0,0)xalpha=0beta=0}
-            \captionof{figure}{Transmisión en grafeno prístino.
-            En el eje vertical vemos el coeficiente de transmisión, y en el plano está la intensidad de la barrera de potencial en meV contra el número de onda inicial $\angstrom^{-1}$.
-            Podemos ver que el coeficiente de transmisión se mantiene constante a lo largo de los diferentes valores de $k$, sin embargo, conforme la barrera de potencial aumenta, el coeficiente de transmisión disminuye.
-            Desde $1$ hasta $0.990$.}
-            \label{fig:noRashba}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[t]{0.48\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{../assets/images/Rashba/TCoefficient(1.0,0)xalpha=0.2beta=-0.2}
-            \captionof{figure}{Transmisión considerando SOIR en la zona de la barrera de potencial.
-            En este caso se observa que el coeficiente de transmisión varía drásticamente formando un patrón similar a una hoja semi-doblada.
-            En el mapa de colores se observa claramente una tendencia.}
-            \label{fig:rashba}
-        \end{minipage}
-    \end{figure}
-
-    En las imágenes podemos notar ciertas aspectos interesantes, empezando con la fig.\ref{fig:noRashba}.
-    Esta figura muestra una caída del coeficiente de transmisión conforme la intensidad de la barrera de potencial aumenta.
-    Este resultado muestra una contradicción con lo que ya se especifíca en la literatura, en el grafeno se esperaría observar una transmisión total debido a las mismas propiedades del material\cite{horsell2008, Young2009}.
-
-    The observed behavior might be the result of one or both of the following aspects:
-
-    \begin{itemize}
-        \item Wave Packet Characteristics:
-        Not a single momentum eigenstate.
-        Debido a que estamos ocupando paquetes de onda en la simulación, un detalle importante que surge es que existe la presencia de múltiples componentes de momentum y eso implica que algunos de ellos pueden causar interferencia con otros; causando un coeficiente de transmisión que difiere del de un sólo autoestado\cite{Staelens2021}.
-        Además, en nuestra simulación se está tomando en cuenta el tiempo.
-        Parte de la investigación a futuro es comprobar si el tiempo de fase o de tunelaje están directamente relacionados a la variación del coeficiente de transmisión observada en este trabajo.
-        \item Quantum interference effects\cite{MolgadoMex2018}.
-        Dependiendo del ancho del paquete y su amplitud, éste se puede dispersar con el tiempo y esto puede causar interferencia con sí mismo.
-        Conforme diferentes partes del GWP encuentran la barrera de potencial, estos pueden estar interfiriendo, causando fluctuaciones en el coeficiente de transmisión.
-    \end{itemize}
-
-    Por otro lado, tenemos la transmisión bajo presencia de SOIR (Fig.\ref{fig:rashba}).
-    Es evidente que se forma una correlación: a mayor altura de la barrera de potencial y mayor el número de onda inicial del paquete de ondas, entonces menor será la transmisión.
-    Sin embargo, el comportamiento interesante aquí es que conforme el valor de $k_0$ sea mayor, y $V_b$ sea menor; entonces se obtiene una transmisión más cercana a $1$.
-
-    A pesar de que la variación en el coeficiente de transmisión es mínima (del orden de $10^{-2}$), esta variación se podría explicar por la misma SOIR, los electrones con diferentes componentes del pseudoespinor interactúan con los de la otra componente.
-    Como ya se había observado antes\cite{Serna2019}, la SOIR puede variar por el número de onda inicial del GWP, de ahí se puede deducir que esta interacción causa la variación en el coeficiente de transmisión.
-
-
-% Conclusions
     \section{Conclusions}\label{sec:conclusions}
 
-Este trabajo analiza, teórica y computacionalmente, los efectos del acoplamiento espín-órbita tipo Rashba (SOIR) en la transmisión de electrones a través de una barrera de potencial en grafeno monocapa.
-Los resultados muestran que el SOIR altera significativamente los coeficientes de transmisión, generando patrones ausentes en grafeno prístino.
-Esto se debe posiblemente a la interacción entre el pseudoespinor de los electrones.
+    In this study, we investigated theoretically and computationally the influence of Rashba spin-orbit interaction (SOIR) on electron transmission across a potential barrier in monolayer graphene.
+    We demonstrated that introducing SOIR significantly modifies electron transmission coefficients, generating complex patterns that are absent in pristine graphene.
 
-En grafeno prístino sin SOIR, la transmisión permanece cercana a la unidad, como se espera por la supresión del retroceso de electrones.
-Sin embargo, se observan pequeñas caídas en la transmisión por interferencias cuánticas en el paquete de onda gaussiano utilizado.
-Estas interferencias resaltan la sensibilidad del sistema y la necesidad de estudiar la relación entre el tiempo de fase y las propiedades de transporte.
+    An interesting contradiction emerged regarding electron transmission observed in pristine graphene compared to existing literature.
+    While pristine graphene commonly exhibits near-perfect transmission due to suppressed electron backscattering, our results indicated small yet notable transmission reductions.
+    These deviations were attributed to characteristics of the Gaussian wave packet used, specifically quantum interference phenomena, highlighting the sensitivity of electron transport properties to subtle variations in experimental and simulation conditions.
 
-Con SOIR, emergen patrones complejos de transmisión relacionados con los parámetros de la barrera y el paquete de ondas, atribuibles a fenómenos como el levantamiento de la degeneración de espín y la dispersión espín-dependiente.
-Estos resultados subrayan la relevancia del SOIR para diseñar dispositivos cuánticos avanzados con aplicaciones en spintrónica y computación cuántica.
+    Moreover, the inclusion of rashba SOIR introduced additional small but meaningful variations in transmission coefficients.
+    This effect was closely linked to the interaction between electron pseudo-spin components, influenced distinctly by the direction and magnitude of the initial wave vector.
+    Our observations underscore the delicate yet impactful role pseudo-spin dynamics play in modifying electron transport properties within graphene-based systems.
+
+    Future studies could focus on systematically analyzing the relationship between phase time or tunneling times and these observed transmission variations induced by SOIR. Such exploration could offer deeper insights into the quantum mechanical principles governing transport phenomena in graphene and related materials.
+
+    Ultimately, our findings highlight the potential of exploiting Rashba spin-orbit interaction to precisely control electron transmission through potential barriers, paving the way toward innovative electronic and spintronic devices, as well as advancing quantum computing technologies.
+
 
 %% Acknowledgments
 %    \section*{Acknowledgments}
 
 % References
     \bibliographystyle{apsrev4-2}
-    \bibliography{/Users/Serkne/WebstormProjects/MLGQ1DWL/bib/main}
+    \bibliography{../bib/main}
 
 \end{document}
