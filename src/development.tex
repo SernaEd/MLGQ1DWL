@@ -41,7 +41,7 @@ The previous hamiltonian can be rewritten as:
     \end{pmatrix}.
 \end{equation}
 
-Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (quasi-one dimensional) semiconductor hetero-structures can be extended to the context of MLG-Q1D\cite{RDiago2010, Serna2019}, it follows that the hamiltonian for the SOIR can be written as:
+Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (quasi-one dimensional) semiconductor hetero-structures can be extended to the context of MLG-Q1D\cite{RDiago2010, Serna2019, RCDiagoEPL2015}, it follows that the hamiltonian for the SOIR can be written as:
 
 \begin{equation}
     \label{eq:SOIRHamiltonian}
@@ -185,10 +185,10 @@ Para discretizar las derivadas, ocupamos la expansión en serie de Taylor hasta 
     f(x_j+\delta x)&=f(x_j) + (x_j+\delta x-x_j)f'(x_j)\nonumber\\
     &=f(x_j)+\delta xf'(x_j),\nonumber\\
     f(x_j-\delta x)&=f(x_j) + (x_j-\delta x-x_j)f'(x_j)\nonumber\\
-    &=f(x_j)-\delta xf'(x_j)
+    &=f(x_j)-\delta xf'(x_j),
 \end{align}
 
-\noindent Si restamos la segunda ecuación de la primera y despejamos, podemos encontrar las ``Diferencias Centradas'' que podemos discretizar también como:
+\noindent si restamos la segunda ecuación de la primera y despejamos, podemos encontrar las ``Diferencias Centradas'' que podemos discretizar también como:
 
 \begin{equation}
     \label{eq:diferenciasCentradas}
