@@ -2,7 +2,7 @@
 
 A quantum channel was fabricated using a hexagonal boron nitride substrate, upon which monolayer graphene (MLG) was deposited and subsequently capped with a silicon dioxide layer.
 Two metallic electrodes were incorporated to generate a perpendicular electric field, thereby confining a Gaussian wave packet (GWP) within the graphene.
-We also added a rectangular electrostatic potential barrier, where we incorporate the Rashba-type spin-orbit interaction.
+We also added a rectangular electrostatic potential barrier, where we incorporate the SOIR\@.
 The system is more deeply explained in our previous article\cite{Serna2019}
 
 % TODO: Add 3D image
@@ -54,7 +54,8 @@ Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (qua
 
 \noindent Where $k_{\alpha\pm} = \alpha\left(k_{\pm}^2/k_{\mp}\right)$ and $k_{\beta\pm} = \beta k_{\pm}^3$; also defining that $k_{\pm}=k_x\pm i k_y$ which are the initial wave numbers of the system.
 The symbols $\alpha$ and $\beta$ represent the linear and cubic contribution of the SOIR respectively.
-We are also taking into account that $\alpha = -\beta$, following the conclusions presented by Wong and Mireles\cite{WongUNAM2005}.
+%We are also taking into account that $\alpha = -\beta$, following the conclusions presented by Wong and Mireles\cite{WongUNAM2005}.
+% TODO: Buscar alguna relación y/o valores para alfa y beta
 
 For this research, we assume the heavy holes only in the region defined by the potential barrier.
 
@@ -331,7 +332,10 @@ Si queremos obtener las componentes de la densidad de corriente, podemos hacerlo
     \end{pmatrix}
 \end{equation}
 
-Si consideramos una función de onda plana incidente, podemos expresarla como:
+La importancia de la expresión del vector corriente, mostrada explícitamente en la ecuación\eqref{eq:componentes}, radica en la comprensión detallada del comportamiento de pseudoespines del grafeno.
+La caracterización clara de ambas componentes del vector corriente resulta central para interpretar los resultados numéricos y entender la fenomenología asociada al transporte en estas estructuras.
+
+A manera de comprobación, si consideramos una función de onda plana incidente, podemos expresarla como:
 
 \begin{equation}
     \label{eq:ondaPlana}
@@ -378,3 +382,6 @@ Con esto podemos ahora sí calcular el coeficiente de transmisión:
 
 \noindent En este contexto, se realiza el cociente entre la corriente transmitida y la corriente incidente, considerando el producto con el vector normal a la barrera.
 En el caso unidimensional aquí abordado, dicho vector puede representarse como $(1,0)$ o $(0,1)$, dependiendo de si el paquete de onda gaussiano (GWP) se propaga a lo largo del eje $x$ o del eje $y$, respectivamente.
+
+Una vez presentado el marco conceptual y las ecuaciones fundamentales del sistema estudiado, procedemos a continuación con el análisis y discusión crítica de los resultados obtenidos mediante las simulaciones numéricas.
+Esta sección nos permitirá evaluar y contrastar detalladamente la influencia del término Rashba sobre la transmisión cuántica en grafeno monocapa.

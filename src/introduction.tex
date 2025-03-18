@@ -1,18 +1,15 @@
-Understanding quantum dispersion in graphene, the correlation between energy levels and corresponding wave vectors, is crucial for unveiling graphene's remarkable electronic and transport properties.
+La dispersión cuántica en grafeno, entendida como la relación entre niveles de energía y sus respectivos vectores de onda, es esencial para explicar las sobresalientes propiedades electrónicas y de transporte observadas en este material bidimensional único.
+Su estructura de red hexagonal genera fermiones de Dirac sin masa, lo que origina particulares fenómenos cuánticos como movilidad extremadamente alta, transporte balístico en escalas micrométricas, y ausencia intrínseca de banda prohibida\cite{Serna2019}.
+Dentro de estos fenómenos, resulta especialmente interesante estudiar el papel de la SOIR, que puede modificar significativamente el comportamiento electrónico y conducir a efectos novedosos de interferencia y dispersión relacionados con el espín electrónico.
 
-Graphene's distinctive two-dimensional honeycomb lattice structure leads to linear dispersion around the Dirac points.
-This results in massless Dirac fermions that display remarkable properties, including extremely high carrier mobility, ballistic transport across distances of several microns, and the lack of a bandgap in pristine graphene sheets\cite{Serna2019}.
-Insights into quantum dispersion are imperative not only for elucidating these intrinsic electronic characteristics but also for exploring quantum phenomena such as weak localization, spin-orbit interactions, and topologically protected quantum phases.
-These quantum effects form the foundation of advanced technological developments, particularly in areas like spintronics and quantum computing\cite{WeizheMaterials2017, AvsarNatCommun2014, LiuNano2023}.
-To accurately investigate and simulate the dynamics of charge carriers in graphene, the Schr\"odinger equation serves as a fundamental tool.
-As quantum mechanics dictate electron behavior at atomic scales, solving this equation provides crucial insights into energy-momentum relationships and quantum mechanical characteristics of electron transport.
-Moreover, accounting precisely for spin-related phenomena and spatial quantum interference effects requires analytically or numerically solving the Schr\"odinger equation under relevant physical conditions.
-Numerically, solving the Schr\"odinger equation frequently requires robust computational approaches.
-One prominent numerical method is the finite differences method (FDM), a discretization technique used to approximate continuous differential operators as algebraic equations solved computationally.
-FDM is particularly helpful due to its simplicity, computational efficiency, and versatility in handling complex boundary and potential configurations encountered in structural graphene studies-making it particularly suited for calculating electronic properties and energy dispersion relations.
-The primary objective of this work is to derive and numerically compute the energy dispersion relations for monolayer graphene, using the finite differences method applied to the Schr\"odinger equation.
-Specifically, this involves defining the model Hamiltonian representing charge carrier dynamics, discretizing the governing equations via FDM, and computationally obtaining dispersion curves.
-An accurate prediction of these energy dispersion relations provides essential insights into graphene's charge carrier dynamics and establishes a foundational knowledge base for engineering graphene-based materials and devices tailored to advanced electronic and spintronic applications.
+La comprensión precisa de estas interacciones es crítica no solamente desde la perspectiva teórica, sino que además representa la base fundamental para aplicaciones tecnológicas emergentes en áreas estratégicas tales como la spintrónica y la computación cuántica\cite{WeizheMaterials2017, AvsarNatCommun2014, LiuNano2023}.
+En este contexto, la ecuación de Schrödinger provee el marco fundamental para analizar el transporte electrónico, siendo particularmente idónea su solución numérica mediante métodos robustos como la técnica de diferencias finitas (FDM).
+Consecuentemente, el objetivo central de este trabajo es calcular detalladamente las relaciones de dispersión energética para electrones en grafeno monocapa bajo interacción SOIR utilizando paquetes de onda gaussianos, destacando cómo estos efectos cuánticos pueden ser explotados para la ingeniería avanzada de dispositivos nanotecnológicos especializados en aplicaciones spintrónicas y de información cuántica.
+
+
+Finalmente, cabe destacar que uno de los aspectos esenciales abordados en este trabajo radica en la formulación analítica precisa del vector corriente, cuya expresión analítica es dada por la ecuación\eqref{eq:componentes}.
+Esta expresión representa un pilar fundamental para comprender detalladamente los efectos y mecanismos subyacentes en los fenómenos de transporte electrónico en presencia de SOIR\@.
+Por ello, la obtención y análisis de dicha ecuación constituye una aportación significativa al campo, especialmente en aplicaciones relacionadas con dispositivos spintrónicos y tecnologías cuánticas emergentes.
 
 
 %\subsection{Weak Localization}\label{subsec:weak-localization}
@@ -22,7 +19,7 @@ An accurate prediction of these energy dispersion relations provides essential i
 %          Strong SOI can cause a transition from WL to WAL, modifying the phase coherence length (the distance over which electron waves maintain their phase relationship) and impacting electrical conductivity\cite{WeizheMaterials2017,AvsarNatCommun2014}.
 %           This transition is crucial for understanding spin interactions within graphene and designing quantum devices.
 
-    \subsection{Rashba-Type Spin-Orbit Interaction}\label{subsec:rashba-type-spin-orbit-interaction}
+\subsection{Klein Paradox}\label{subsec:kleinParadox}
 
 Applying an electrostatic potential to graphene can create regions where electrons are classically forbidden due to energy constraints\cite{SoninPhysRevB2009}.
 For instance, a negative gate voltage can shift the Fermi level into the valence band, establishing a potential barrier that electrons do not have sufficient energy to overcome, according to classical physics\cite{DellAnnaJPhysCondMatt2018}.
@@ -34,23 +31,29 @@ The Klein paradox is a direct consequence of graphene's unique linear dispersion
 While this perfect transmission through barriers might pose challenges for achieving electron confinement in some device designs, it also presents opportunities for developing novel tunneling-based electronic devices.
 Beyond simply creating a forbidden region, the application of electrostatic potential can dramatically alter electron transmission through various other mechanisms, influencing the refractive index and leading to phenomena like electron lensing\cite{ParedesPhysRevB2021}.
 
-Rashba spin-orbit interaction (RSOI) is a relativistic effect that arises in systems lacking structural inversion symmetry\cite{AvishaiPhysRevB2021}.
-In graphene, RSOI can be induced by an external electric field applied perpendicular to the graphene plane or through proximity to a substrate\cite{ShcherbakovSciAdv2021}.
-A key consequence of RSOI is the breaking of spin degeneracy, where the energy levels of electrons with opposite spins are no longer the same, even in the absence of an external magnetic field\cite{DelkhoshPhysE2015}.
-Controlling spin degeneracy through electric fields via Rashba spin-orbit interaction (RSOI) is particularly valuable for spintronic applications.
+\subsection{Rashba-Type Spin-Orbit Interaction}\label{subsec:rashba-type-spin-orbit-interaction}
+
+SOIR is a relativistic effect that arises in systems lacking structural inversion symmetry\cite{AvishaiPhysRevB2021}.
+La SOIR es especialmente relevante debido a su capacidad para modificar significativamente la estructura electrónica del grafeno, induciendo acoplamientos particulares entre el espín y el momento de los electrones.
+Esto lleva a exhibir fenómenos emergentes tales como la interferencia cuántica dependiente del espín y efectos de dispersión no convencionales.
+El impacto de la SOIR no solo aporta nuevas perspectivas en física fundamental, sino que también abre posibilidades prometedoras para aplicaciones avanzadas en tecnologías spintrónicas y dispositivos basados en información cuántica.
+
+In graphene, SOIR can be induced by an external electric field applied perpendicular to the graphene plane or through proximity to a substrate\cite{ShcherbakovSciAdv2021}.
+A key consequence of SOIR is the breaking of spin degeneracy, where the energy levels of electrons with opposite spins are no longer the same, even in the absence of an external magnetic field\cite{DelkhoshPhysE2015}.
+Controlling spin degeneracy through electric fields via SOIR is particularly valuable for spintronic applications.
 It enables electron spin manipulation without depending on magnetic fields, which typically require more power and are challenging to incorporate effectively into nanoscale systems.
 
 
-Furthermore, RSOI modifies the effective mass of charge carriers in graphene.
+Furthermore, SOIR modifies the effective mass of charge carriers in graphene.
 It can lead to the opening of an energy gap at the Dirac points, effectively giving the otherwise massless Dirac fermions a finite mass.
-In systems with strong spin-orbit coupling, such as certain heavy-hole systems, specific types of RSOI (like k³-Rashba spin-orbit coupling) can even result in anisotropic band structures and the emergence of additional spin-degeneracy points under light illumination.
-While this specific example refers to heavy holes, the principle that RSOI can significantly alter the band structure and effective mass of carriers is relevant to graphene, particularly when considering proximity-induced effects from substrates with strong spin-orbit coupling\cite{GindikinPhysRevB2025}.
-The modification of the effective mass by RSOI can profoundly impact graphene's transport properties, influencing carrier mobility and the density of states.
-Notably, tuning the strength of RSOI in graphene can even induce a transition from the Klein tunneling regime (perfect transmission) to the anti-Klein tunneling regime (perfect reflection) when electrons encounter a potential barrier.
-This ability to control the transmission probability through potential barriers using RSOI opens up exciting possibilities for creating novel electronic devices that leverage this fundamental quantum mechanical phenomenon\cite{YaoMater2024}.
+In systems with strong spin-orbit coupling, such as certain heavy-hole systems, specific types of SOIR (like $k^3$-Rashba spin-orbit coupling) can even result in anisotropic band structures and the emergence of additional spin-degeneracy points under light illumination.
+While this specific example refers to heavy holes, the principle that SOIR can significantly alter the band structure and effective mass of carriers is relevant to graphene, particularly when considering proximity-induced effects from substrates with strong spin-orbit coupling\cite{GindikinPhysRevB2025}.
+The modification of the effective mass by SOIR can profoundly impact graphene's transport properties, influencing carrier mobility and the density of states.
+Notably, tuning the strength of SOIR in graphene can even induce a transition from the Klein tunneling regime (perfect transmission) to the anti-Klein tunneling regime (perfect reflection) when electrons encounter a potential barrier.
+This ability to control the transmission probability through potential barriers using SOIR opens up exciting possibilities for creating novel electronic devices that leverage this fundamental quantum mechanical phenomenon\cite{YaoMater2024}.
 
-
-
+En la próxima sección, se describirá detalladamente el modelo físico-matemático adoptado en este estudio.
+Partiendo de la base conceptual presentada anteriormente sobre la dispersión cuántica y la interacción espín-órbita tipo Rashba, se definirá el sistema y las ecuaciones correspondientes que permiten simular numéricamente los fenómenos observados en nuestros resultados.
 
 
 %    \subsection{Quantum Dispersion and Anomalous Hall Effect}\label{subsec:quantum-dispersion-and-anomalous-hall-effect}
