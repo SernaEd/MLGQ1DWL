@@ -1,4 +1,4 @@
-A continuación se muestran las figuras obtenidas con el procedimiento obtenido anteriormente.
+The following figures were obtained using the procedure described previously.
 
 \begin{figure}[h!]
     \centering
@@ -15,52 +15,52 @@ A continuación se muestran las figuras obtenidas con el procedimiento obtenido 
         \centering
         \includegraphics[width=\textwidth]{../assets/images/Rashba/TCoefficient(1.0,0)xalpha=0.2beta=-0.2}
         \caption{figure}{
-            Coeficiente de transmisión ($T$) en función de la altura de la barrera de potencial ($V_b$) y el número de onda inicial ($k_0$) con una configuración inicial de pseudoespinor $\xi = (1, 0)$. La superficie 3D y el mapa de color 2D muestran una dependencia no monotónica de $T$ con respecto a $V_b$ y $k_0$, destacando la influencia del acoplamiento espín-órbita en la transmisión a través de la barrera.
+            Transmission coefficient ($T$) as a function of potential barrier height ($V_b$) and initial wave number ($k_0$) with an initial pseudospinor configuration $\xi = (1, 0)$. The 3D surface and 2D color map show a non-monotonic dependence of $T$ with respect to $V_b$ and $k_0$, highlighting the influence of spin-orbit coupling on transmission through the barrier.
         }
         \label{fig:rashba}
     \end{minipage}
 \end{figure}
 
-En las imágenes podemos notar ciertos aspectos interesantes, empezando con la fig.\ref{fig:noRashba}.
-La imagen presenta dos gráficos que ilustran el coeficiente de transmisión ($T$) en función de $Vb$ (en meV) y $k_0$ (en \AA$^{-1}$) para un valor fijo de $\xi = (1, 0)$.
-El gráfico de la izquierda es una visualización tridimensional donde $T$ está en el eje $z$, $Vb$ en el eje $x$ y $k_0$ en el eje $y$, con una escala de colores que varía desde morado oscuro (menor $T$) hasta amarillo brillante (mayor $T$).
-El gráfico de la derecha es un mapa de calor bidimensional que ofrece una vista superior, con el eje $x$ representando $k_0$ y el eje $y$ representando $Vb$, usando el mismo mapa de colores que el gráfico 3D\@.
-Ambos gráficos muestran que el coeficiente de transmisión generalmente se mantiene muy cerca de 1, indicando una alta transmisión.
-Conforme aumenta $Vb$, $T$ tiende a disminuir, mientras que la dependencia respecto a $k_0$ es mínima.
-En general, los gráficos demuestran cómo cambia $T$ con variaciones en $Vb$ y $k_0$, destacando una leve disminución de $T$ al aumentar $Vb$ y un cambio insignificante respecto a $k_0$.
+In the images, we can observe certain interesting aspects, starting with fig.\ref{fig:noRashba}.
+The image presents two graphs that illustrate the transmission coefficient ($T$) as a function of $Vb$ (in meV) and $k_0$ (in \AA$^{-1}$) for a fixed value of $\xi = (1, 0)$.
+The left graph is a three-dimensional visualization where $T$ is on the $z$-axis, $Vb$ on the $x$-axis, and $k_0$ on the $y$-axis, with a color scale that varies from dark purple (lower $T$) to bright yellow (higher $T$).
+The right graph is a two-dimensional heat map that offers a top view, with the $x$-axis representing $k_0$ and the $y$-axis representing $Vb$, using the same color map as the 3D graph.
+Both graphs show that the transmission coefficient generally remains very close to 1, indicating high transmission.
+As $Vb$ increases, $T$ tends to decrease, while the dependence on $k_0$ is minimal.
+In general, the graphs demonstrate how $T$ changes with variations in $Vb$ and $k_0$, highlighting a slight decrease in $T$ as $Vb$ increases and an insignificant change with respect to $k_0$.
 
-Este resultado muestra una contradicción con lo que ya se especifíca en la literatura, en el grafeno se esperaría observar una transmisión total debido a las mismas propiedades del material\cite{horsell2008, Young2009}.
+This result shows a contradiction with what is already specified in the literature, as in graphene, total transmission would be expected due to the material's inherent properties\cite{horsell2008, Young2009}.
 
-Estas diferencias observadas pueden atribuirse principalmente a los siguientes aspectos relacionados con nuestro método y condiciones de simulación:
+These observed differences can be primarily attributed to the following aspects related to our method and simulation conditions:
 
 \begin{itemize}
     \item Wave Packet Characteristics:
-    Nuestra simulación utiliza un paquete de onda (GWP) compuesto por múltiples autoestados de momentum en lugar de considerar un único estado propio.
-    Esta elección implica contribuciones simultáneas de varios estados, que potencialmente generan interferencias cuánticas afectando ligeramente el coeficiente de transmisión\cite{Staelens2021}.
-    Este punto, resaltado por nuestra modelación dinámica en tiempo, marca una diferencia significativa respecto a los modelos teóricos ideales donde dichas interferencias no aparecen.
+    Our simulation uses a wave packet (GWP) composed of multiple momentum eigenstates instead of considering a single eigenstate.
+    This choice implies simultaneous contributions from several states, potentially generating quantum interferences that slightly affect the transmission coefficient\cite{Staelens2021}.
+    This point, highlighted by our time-dynamic modeling, marks a significant difference compared to ideal theoretical models where such interferences do not appear.
 
-    Además, nuestra simulación contempla explícitamente la variable tiempo, algo poco frecuente en estudios teóricos previos ideales y estáticos.
-    Investigar cómo estos aspectos dinámicos, como el tiempo de fase o el tiempo de túnel, afectan específicamente la transmisión observada es un objetivo importante propuesto para trabajos posteriores.
+    Additionally, our simulation explicitly considers the time variable, something uncommon in previous ideal and static theoretical studies.
+    Investigating how these dynamic aspects, such as phase time or tunneling time, specifically affect the observed transmission is an important objective proposed for future work.
 
-    \item Efectos de interferencia cuántica por dispersión del paquete en el tiempo:
-    Como ha sido sugerido por la literatura\cite{MolgadoMex2018}, al evolucionar temporalmente un paquete de onda gaussiano suficientemente ancho, este se dispersa espacialmente de tal forma que diferentes partes del mismo interactúan simultáneamente con la barrera, causando interferencias internas consigo mismas.
-    Tal interferencia es una posible causa adicional de las fluctuaciones en la transmisión observada en nuestros resultados numéricos.
+    \item Quantum interference effects due to packet dispersion over time:
+    As suggested by the literature\cite{MolgadoMex2018}, when a sufficiently wide Gaussian wave packet evolves temporally, it disperses spatially in such a way that different parts of it simultaneously interact with the barrier, causing internal interferences with itself.
+    Such interference is a possible additional cause of the fluctuations in transmission observed in our numerical results.
 \end{itemize}
 
-Estos puntos explican las diferencias encontradas claramente desde una perspectiva metodológica y vinculan nuestros resultados numéricos respecto a la predicción teórica mencionada en los estudios previos.
-Esto no solo aclara la aparente contradicción, sino que también permite reforzar claramente el vínculo entre nuestros resultados específicos y el objetivo principal de analizar efectos dinámicos y propiedades que surgen al emplear paquetes de onda Gaussianos en simulaciones de tunneling cuántico en sistemas basados en grafeno.
+These points clearly explain the differences found from a methodological perspective and link our numerical results to the theoretical prediction mentioned in previous studies.
+This not only clarifies the apparent contradiction but also clearly reinforces the connection between our specific results and the main objective of analyzing dynamic effects and properties that arise when using Gaussian wave packets in quantum tunneling simulations in graphene-based systems.
 
-Por otro lado, tenemos la transmisión bajo presencia de SOIR (Fig.\ref{fig:rashba}).
+On the other hand, we have the transmission under the presence of SOIR (Fig.\ref{fig:rashba}).
 
-Se observa una correlación entre las variables: generalmente, a mayor altura de la barrera de potencial ($Vb$) y mayor número de onda inicial ($k_0$), se espera una menor transmisión.
-Sin embargo, la interacción espín-órbita introduce un comportamiento más complejo.
-A medida que $k_0$ aumenta y $Vb$ disminuye, la transmisión se acerca a 1, indicando una mayor probabilidad de tunelamiento cuántico debido a la SOIR\@.
+A correlation between the variables is observed: generally, with greater potential barrier height ($Vb$) and greater initial wave number ($k_0$), lower transmission is expected.
+However, the spin-orbit interaction introduces more complex behavior.
+As $k_0$ increases and $Vb$ decreases, the transmission approaches 1, indicating a higher probability of quantum tunneling due to SOIR\@.
 
-Aunque la variación en el coeficiente de transmisión es pequeña (del orden de $10^{-2}$), es significativa y atribuible a la interacción SOIR. Los electrones, con sus diferentes componentes de pseudoespín, interactúan, y esta interacción se ve afectada por el número de onda inicial del paquete de ondas gaussiano (GWP), como se observó en estudios previos\cite{Serna2019}.
-Por lo tanto, la SOIR modula la interacción, lo que a su vez causa las fluctuaciones observadas en el coeficiente de transmisión.
+Although the variation in the transmission coefficient is small (on the order of $10^{-2}$), it is significant and attributable to the SOIR interaction. The electrons, with their different pseudospin components, interact, and this interaction is affected by the initial wave number of the Gaussian wave packet (GWP), as observed in previous studies\cite{Serna2019}.
+Therefore, SOIR modulates the interaction, which in turn causes the fluctuations observed in the transmission coefficient.
 
-Es importante destacar aquí que la obtención analítica del vector corriente (ec. \ref{eq:componentes}) ha sido determinante para interpretar los resultados obtenidos numéricamente.
-En particular, esta ecuación permite vincular explícitamente diferencias observadas en los coeficientes de transmisión con los componentes pseudoespinoriales y sus correlaciones cruzadas debido a la interacción Rashba.
-Por lo tanto, este resultado no solo brinda claridad conceptual, sino que también sienta las bases para futuras investigaciones teóricas y experimentales sobre transporte spintrónico avanzado en grafeno.
+It is important to highlight here that the analytical derivation of the current vector (eq. \ref{eq:componentes}) has been crucial for interpreting the numerically obtained results.
+In particular, this equation allows explicitly linking observed differences in transmission coefficients with pseudospinorial components and their cross-correlations due to the Rashba interaction.
+Therefore, this result not only provides conceptual clarity but also lays the foundation for future theoretical and experimental research on advanced spintronic transport in graphene.
 
-Tras analizar exhaustivamente los resultados numéricos y discutir los aspectos particulares observados en los coeficientes de transmisión electrónica con y sin interacción Rashba, podemos sintetizar a continuación las principales conclusiones alcanzadas en este trabajo, resaltando sus implicaciones teóricas y tecnológicas, así como las perspectivas para futuros estudios y aplicaciones.
+After thoroughly analyzing the numerical results and discussing the particular aspects observed in the electronic transmission coefficients with and without Rashba interaction, we can synthesize below the main conclusions reached in this work, highlighting their theoretical and technological implications, as well as the perspectives for future studies and applications.
