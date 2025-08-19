@@ -7,7 +7,7 @@ The system is more deeply explained in our previous article\cite{Serna2019}
 
 \subsection{Mathematical Model}\label{subsec:mathematical-model}
 
-From the physical model, we can get a mathematical model which describes the temporal evolution and consequently the quantum dispersion of the fDs in the MLG\@.
+From the physical model, we can get a mathematical model which describes the temporal evolution and consequently the quantum dispersion of the Dirac fermions in the MLG\@.
 
 Starting with the pristine graphene hamiltonian\cite{Geimk2007}:
 
@@ -21,6 +21,16 @@ Starting with the pristine graphene hamiltonian\cite{Geimk2007}:
 \end{smallmatrix} \bigr)$, $\hat{\sigma}_{y} = \bigl(\begin{smallmatrix}
                                                          0&-i \\ i&0
 \end{smallmatrix} \bigr)$, and $\vec{p}=\hat{p}_{x}\hat{\imath}+\hat{p}_{y}\hat{\jmath}$, the momentum operator, which $x, y$ components read $\hat{p}_{x} = -i\hbar\frac{\partial}{\partial x}$ and $\hat{p}_{y} = -i\hbar\frac{\partial}{\partial y}$, respectively.
+
+The standard Rashba coupling for monolayer graphene (often written, in a four-component basis, as $\hat{H}_{\mathrm{DR}}=\lambda_R(\sigma_x s_y-\sigma_y s_x)$, with $s_i$ Pauli matrices in real-spin space) is generally very weak in pristine samples.
+
+In our baseline configuration (pristine regions), we therefore neglect $\hat{H}_{\mathrm{DR}}$, consistent with typical estimates where $\lambda_R \ll \hbar v_F k_0$ and $\lambda_R \ll V_b$ at the scales of interest.
+
+By contrast, in proximity-engineered heterostructures (e.g., graphene on TMDs or with Au), $\lambda_R$ can be enhanced to meV scales\cite{AvsarNatCommun2014, WangPhysRevX2016}.
+
+In such cases, the canonical Dirac--Rashba term must be explicitly included in the Hamiltonian (together with the corresponding four-component spinor structure), and its consequences on wave-packet dynamics and transmission should be analyzed. We delineate this extension at the end of this subsection.
+
+
 From this point forward, $v_{\mb{\tiny F}}$ stands for the Fermi velocity of the carriers in MLG, which satisfies
 
 \begin{equation}
@@ -81,9 +91,46 @@ Adding up the graphene\eqref{eq:pristineGrapheneMatrix}, the SOIR\eqref{eq:SOIRH
 
 Note that if we wanted to see the results in the $y$ direction, we would have to zero the partial derivatives of $x$.
 
+If the experimental context implies a giant Rashba coupling (e.g., proximity to TMDs, Au intercalation/adatoms), the Hamiltonian should be augmented to
+(i) a four-component spinor (sublattice $\otimes$ real spin) and
+(ii) include $\hat{H}_{\mathrm{DR}}=\lambda_R(\sigma_x s_y-\sigma_y s_x)$ along with $\hat{\bn{H}}_G$ and the electrostatic potential.
+Within our time-evolution framework, this amounts to propagating a four-component Gaussian wave packet under the enlarged $4\times 4$ operator (the finite-difference machinery and stability criteria carry over directly).
+Qualitatively, one should then expect pronounced spin splitting, spin precession inside and near the barrier, spin-dependent resonant features, and the possibility of transitions between Klein and anti-Klein tunneling regimes under suitable parameters\cite{DellAnnaJPhysCondMatt2018, AvsarNatCommun2014, WangPhysRevX2016}.
+
+This is the basis of a more general model that can be explored in future work, particularly in light of recent experimental advances in engineering strong Rashba coupling in graphene-based heterostructures\cite{ManchonNatureMater2015}.
+
+\subsection{Quasi-1D confinement and sub-band hybridization}\label{subsec:q1d-confinement-hybridization}
+We model transport along $x$ under quasi-one-dimensional (Q1D) conditions produced by a transverse ($y$) electrostatic confinement that creates discrete transverse modes.
+In practice, this can be achieved by electrostatic guiding (smooth $p$-$n$-$p$ profiles or split-gate definition) or narrow channels, leading to a ladder of sub-bands indexed by $n$ in the $y$ direction\cite{Young2009, ParedesPhysRevB2021, TrauzettelNature2007}.
+Two limiting parametrizations are useful for estimates:
+(i) hard-wall guiding of width $W$, where the transverse quantization gives $k_{y,n}\approx (n+\delta)\pi/W$ and a sub-band spacing $\Delta_y\sim \hbar v_F\pi/W$ between $n=0$ and $n=1$; and
+(ii) approximately parabolic electrostatic confinement characterized by $\hbar\omega_y$, yielding a mode spacing $\Delta_y\simeq \hbar\omega_y$.
+
+In our simulations, the barrier is uniform along $y$ (i.e., $V=V(x)$), and we set $\partial_y\to 0$ consistently with a single-mode approximation centered at $k_y\simeq 0$.
+This is justified provided the injected Gaussian packet populates predominantly the lowest transverse mode, and inter-subband couplings are negligible.
+Quantitatively, we impose the single-mode criteria
+\begin{equation*}
+\Delta_y \gg \max\{\lambda_R,\ \sigma_E,\ \hbar v_F\,\Delta k_y\},
+\end{equation*}
+\noindent where $\sigma_E$ is the energy spread of the packet and $\Delta k_y\sim 1/\sigma_y$ is its transverse-$k$ width (set by the real-space transverse width $\sigma_y$ of the injection).
+For hard-wall guiding, this amounts to $\hbar v_F\pi/W \gg \{\lambda_R,\sigma_E,\hbar v_F/\sigma_y\}$; for smooth confinement, to $\hbar\omega_y \gg \{\lambda_R,\sigma_E,\hbar v_F/\sigma_y\}$.
+Under these conditions, sub-band hybridization is suppressed and the Q1D reduction with $k_y\to 0$ (and $y$-derivatives zeroed) is controlled.
+
+Sub-band hybridization can become important if (a) the confinement is weak (small $\Delta_y$ or wide $W$), (b) the wave packet significantly occupies multiple $k_y$ components, (c) the potential varies along $y$ (i.e., $V=V(x,y)$) producing mode-mixing matrix elements $\propto\langle n|\partial_y V|m\rangle$, or (d) spin-orbit terms couple modes with different transverse parity.
+In such regimes, one must retain the full 2D problem or expand the spinor in transverse eigenmodes,
+$\Psi(x,y,t)=\sum_n \chi_n(y)\, \varphi_n(x,t)$,
+leading to coupled 1D channel equations with inter-mode couplings determined by $V(x,y)$ and Rashba matrix elements.
+Hybridization then yields avoided crossings and multi-channel resonances in transmission (Fano-like features), and the effective single-channel picture no longer applies\cite{MiroshnichenkoRevModPhys2010}.
+
+We have verified that the parameter sets used in this work satisfy the single-mode criteria above, ensuring that (i) only the lowest transverse mode is appreciably occupied at injection and (ii) inter-subband couplings driven by the barrier and Rashba terms remain negligible.
+Consequently, the confinement term is justified and sub-band hybridization does not alter our conclusions within the explored parameter window.
+Exploring multi-mode transport and intentional mode hybridization (e.g., by patterned $V(x,y)$ or stronger $\lambda_R$) is a natural extension of the present framework.
+
+Note that if we wanted to see the results in the $y$ direction, we would have to zero the partial derivatives of $x$.
+
 \subsection{Finite differences scheme}\label{subsec:finite-differences-scheme}
 
-The main equation to solve is the time-dependent Schrödinger equation:
+The main equation to solve is the time-dependent eigenvalue equation:
 
 \begin{equation}
     \label{eq:schrodingerTimeDependent}
@@ -134,7 +181,7 @@ For the probability density calculated below, we use the following definition:
 \end{equation}
 
 \subsection{Temporal Evolution Operator}\label{subsec:temporal-evolution-operator}
-To solve the Schrödinger equation\eqref{eq:schrodingerTimeDependent}, we propose using a temporal evolution operator (TEO), based on the following equation:
+To solve the eigenvalue equation\eqref{eq:schrodingerTimeDependent}, we propose using a temporal evolution operator (TEO), based on the following equation:
 
 \begin{equation}
     \label{eq:TEOdifEq}
@@ -142,7 +189,7 @@ To solve the Schrödinger equation\eqref{eq:schrodingerTimeDependent}, we propos
 \end{equation}
 
 \noindent We can see that by applying the operator, we obtain a time $t$ from an initial time $t_0$.
-If we substitute the TEO equation\eqref{eq:TEOdifEq} into the Schrödinger equation\eqref{eq:schrodingerTimeDependent}, we can develop the algebra and solve the differential equation to obtain the TEO\@.
+If we substitute the TEO equation\eqref{eq:TEOdifEq} into the eigenvalue equation\eqref{eq:schrodingerTimeDependent}, we can develop the algebra and solve the differential equation to obtain the TEO\@.
 Since the Hamiltonian does not depend on time, we can rewrite eq.\eqref{eq:TEOdifEq} as:
 
 \begin{equation}
@@ -208,7 +255,7 @@ In this way, we can rewrite our system of equations, once the discretization and
     i\hbar v_{\mb{\tiny F}}\frac{\phi_{A, j+1}-\phi_{A, j-1}}{2\delta x}) = 2\psi_{B,j}
 \end{multline}
 
-If we add equations eq.\eqref{eq:partA} and eq.\eqref{eq:partB}:
+If we add Eq.\eqref{eq:partA} and Eq.\eqref{eq:partB}:
 
 \begin{widetext}
     \begin{align}
@@ -250,12 +297,12 @@ If we add equations eq.\eqref{eq:partA} and eq.\eqref{eq:partB}:
     \end{align}
 \end{widetext}
 
-\noindent Where $N =1 + \frac{i\delta t}{2\hbar} \left( V_j + \left(k_{\alpha+,j}+k_{\beta+,j}\right)\right)$, $Q=\frac{i\hbar v_{\mb{\tiny F}}}{2\delta x}$ and $M =1 + \frac{i\delta t}{2\hbar}\left( V_j + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\right)$.
+\noindent where $N =1 + \frac{i\delta t}{2\hbar} \left( V_j + \left(k_{\alpha+,j}+k_{\beta+,j}\right)\right)$, $Q=\frac{i\hbar v_{\mb{\tiny F}}}{2\delta x}$ and $M =1 + \frac{i\delta t}{2\hbar}\left( V_j + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\right)$.
 
 As can be seen, the size of the matrix depends on the size of our system.
 If we choose $\delta x = 1\angstrom$, then a quantum well of $1200\angstrom$ will generate a matrix of $1200\times1200$.
 
-We repeat the previous procedure but now subtracting equations eq.\eqref{eq:partA} and eq.\eqref{eq:partB}
+We repeat the previous procedure but now subtracting Eq.\eqref{eq:partA} and Eq.\eqref{eq:partB}
 
 Looking at these matrices, we can redefine them as two simple matrix equations $2\psi_+=\mathbb{N}\phi_A+\mathbb{M}\phi_B$ and $2\psi_-=\mathbb{L}\phi_A+\mathbb{P}\phi_B$.
 These equations can be treated as a system of matrix equations that are solved as follows:
@@ -285,7 +332,7 @@ To find this current, we start from the following continuity equation:
     \frac{\partial\rho}{\partial t} + \nabla\cdot\vec{j}=0
 \end{equation}
 
-Applying the conjugate transpose to the time-dependent Schrödinger equation\eqref{eq:schrodingerTimeDependent}, and multiplying on the right by $\Psi$, we can incorporate the probability density equation\eqref{eq:probDens}.
+Applying the conjugate transpose to the time-dependent eigenvalue equation\eqref{eq:schrodingerTimeDependent}, and multiplying on the right by $\Psi$, we can incorporate the probability density equation\eqref{eq:probDens}.
 At the same time, we consider the graphene Hamiltonian\eqref{eq:pristGr}, which we know is Hermitian since it is composed of Pauli matrices.
 In this way, we can construct the following equation:
 
@@ -367,7 +414,7 @@ This simplification is what is commonly used in the literature\cite{DahalJPhysCh
 To determine the numerical value of $\vec{\jmath}$, we identify the peaks in the probability density plots.
 Subsequently, we calculate the minima of the Gaussian curves to find the apparent width of the GWP. Finally, we locate two precise moments: immediately before the wave packet interacts with the potential barrier and the exact moment it has traversed the barrier.
 
-With the defined entry ($t_1$) and exit ($t_2$) times, we use equation eq.\eqref{eq:componentes} for the entire space at each of these times.
+With the defined entry ($t_1$) and exit ($t_2$) times, we use Eq.\eqref{eq:componentes} for the entire space at each of these times.
 
 With this, we can now calculate the transmission coefficient:
 

@@ -13,6 +13,7 @@
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{hyperref}
+\usepackage{amssymb}
 
 \newcommand{\bn}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\mb}{\mbox}
@@ -27,7 +28,7 @@
     \email{sernaed95@gmail.com}
     \affiliation{Centro de Investigación en Ciencias, Universidad Autónoma del Estado de Morelos, Morelos, 62209, México}
     \author{I. Rodríguez Vargas}
-    \email{isaac@fisica.uaz.edu.mx}
+    \email{isaac@uaz.edu.mx}
     \affiliation{Unidad Académica de Física, Universidad Autónoma de Zacatecas, Zacatecas, 98060, México}
     \author{L. Diago-Cisneros}
     \email{ldiago@fisica.uh.cu}
@@ -38,7 +39,7 @@
 % Abstract
     \begin{abstract}
         This paper presents a theoretical and computational study on the impact of Rashba spin-orbit interaction (SOIR) on electron transmission through a potential barrier in monolayer graphene.
-        The energy dispersion relations were numerically obtained via the finite differences method applied to the Schrödinger equation, using a model Hamiltonian incorporating graphene, SOIR, and a potential barrier.
+        The energy dispersion relations were numerically obtained via the finite differences method applied to the eigenvalue equation, using a model Hamiltonian incorporating graphene, SOIR, and a potential barrier.
         Our findings reveal that the presence of SOIR significantly modifies the electron transmission coefficients compared with pristine graphene conditions.
         While electron transmission in pristine graphene remains near unity with minor reductions due to quantum interference effects in a Gaussian wave packet, introducing SOIR leads to intricate transmission patterns dependent on the barrier parameters and wave packet characteristics.
         These effects arise from phenomena such as spin degeneracy lifting and spin-dependent scattering mechanisms.
@@ -78,6 +79,10 @@
 
     Collectively, our findings clearly highlight that a detailed understanding of SOIR provides predictive capability and essential tools for the engineering of spintronic devices and platforms applicable to quantum computing.
     Therefore, this study firmly reaffirms the relevance of these fundamental quantum phenomena in current and future technological scenarios.
+    Finally, we emphasize a key modeling choice: we neglect the canonical Dirac–Rashba term in pristine graphene because its magnitude is typically very small at the scales considered.
+    Nevertheless, giant Rashba couplings have been reported in proximity-engineered systems (e.g., graphene on TMDs or with Au), for which the canonical term should be included explicitly and its impact on wave-packet propagation assessed.
+    Extending our framework to that regime is straightforward (upgrade to a four-component spinor and add the Dirac–Rashba operator), and will be the subject of future work, where we will quantify the consequent spin splitting, spin precession, and possible Klein-to–anti-Klein transitions\cite{AvsarNatCommun2014, WangPhysRevX2016, DellAnnaJPhysCondMatt2018}.
+
     \pagebreak
 
 %% Acknowledgments

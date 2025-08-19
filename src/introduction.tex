@@ -1,15 +1,34 @@
 Quantum dispersion in graphene, understood as the relationship between energy levels and their respective wave vectors, is essential for explaining the outstanding electronic and transport properties observed in this unique two-dimensional material.
-Its hexagonal lattice structure generates massless Dirac fermions, which gives rise to particular quantum phenomena such as extremely high mobility, ballistic transport at micrometric scales, and intrinsic absence of a band gap\cite{Serna2019}.
+Its hexagonal lattice structure generates massless Dirac fermions, which gives rise to particular quantum phenomena such as extremely high mobility, ballistic transport at micrometric scales, and intrinsic absence of a band gap\cite{Geimk2007}.
 Among these phenomena, it is especially interesting to study the role of SOIR, which can significantly modify electronic behavior and lead to novel interference and scattering effects related to electron spin.
 
+A central theme of this work is the intertwined role of pseudospin (sublattice), real spin, and carrier momentum in graphene.
+Their coupling—through chirality in pristine graphene and through SOIR in proximitized or field-engineered systems—governs boundary matching, mode mixing, and transmission across electrostatic profiles.
+This interrelation can drive counterintuitive transport regimes, including the suppression of the normally perfect Klein transmission (anti-Klein tunneling) under suitable Rashba strengths, confinement conditions, and barrier parameters\cite{Young2009, DellAnnaJPhysCondMatt2018}.
+In what follows, we make this connection explicit by analyzing how the effective Rashba coupling within the barrier reshapes wave-packet dynamics and transmission resonances.
 The precise understanding of these interactions is critical not only from a theoretical perspective but also represents the fundamental basis for emerging technological applications in strategic areas such as spintronics and quantum computing\cite{WeizheMaterials2017, AvsarNatCommun2014, LiuNano2023}.
-In this context, the Schrödinger equation provides the fundamental framework for analyzing electronic transport, with its numerical solution being particularly suitable through robust methods such as the finite difference technique (FDM).
+In this context, the eigenvalue equation provides the fundamental framework for analyzing electronic transport, with its numerical solution being particularly suitable through robust methods such as the finite difference technique (FDM).
 Consequently, the central objective of this work is to calculate in detail the energy dispersion relations for electrons in monolayer graphene under SOIR interaction using Gaussian wave packets, highlighting how these quantum effects can be exploited for the advanced engineering of nanotechnological devices specialized in spintronic and quantum information applications.
+
+It is equally important to put on the table the relevance of SOIR as a general phenomenon that can manifest in multiple contexts beyond graphene.
+SOIR arises from structural inversion asymmetry and appears across diverse platforms, including semiconductor two-dimensional electron gases, oxide interfaces, topological-insulator surfaces, transition-metal dichalcogenides, heavy-metal/ferromagnet bilayers, and van der Waals heterostructures.
+Emphasizing this generality clarifies that the mechanisms and insights discussed here—spin splitting, spin–momentum locking, modified transmission resonances, and Klein-to–anti-Klein crossovers—carry broader significance and can inform the design of spintronic and quantum devices across these material families.
+
+It is important to clarify our modeling scope regarding Rashba spin–orbit coupling in graphene.
+
+In pristine monolayer graphene, the canonical (Dirac–Rashba) term is typically very small (often quoted in the μeV range), and thus it is commonly neglected for transport at the energy and length scales considered here.
+
+This is the rationale behind not including the standard Dirac–Rashba term explicitly in the pristine regions of our model.
+However, the literature also reports proximity-induced scenarios where a giant Rashba coupling can emerge, for example in graphene interfaced with transition-metal dichalcogenides or in systems with Au adatoms/intercalation, leading to effective SOC values in the meV–tens of meV range\cite{AvsarNatCommun2014, WangPhysRevX2016}.
+
+In such cases, the canonical Dirac–Rashba term should be included and its impact on wave-packet propagation analyzed (e.g., stronger spin splitting, spin precession, modified transmission resonances, and even transitions from Klein to anti-Klein regimes).
+
+In the present study we focus on the pristine-graphene limit where the canonical term is negligible, while we model proximity-induced effects within the barrier via an effective Rashba-like coupling, as detailed in Sec.~\ref{subsec:mathematical-model}.
 
 
 Finally, it is worth noting that one of the essential aspects addressed in this work lies in the precise analytical formulation of the current vector, whose analytical expression is given by equation\eqref{eq:componentes}.
-This expression represents a fundamental pillar for understanding in detail the effects and underlying mechanisms in electronic transport phenomena in the presence of SOIR\@.
-Therefore, the derivation and analysis of this equation constitutes a significant contribution to the field, especially in applications related to spintronic devices and emerging quantum technologies.
+This expression is the standard charge-current operator associated with the Dirac–Rashba model in graphene and has been discussed in prior literature\cite{AvishaiPhysRevB2021}.
+Our contribution is to employ this established result to perform a component-wise and correlation-based analysis tailored to time-resolved Gaussian wave-packet transport under SOIR, which provides practical interpretability of the numerical transmission features reported in this study.
 
 
 %\subsection{Weak Localization}\label{subsec:weak-localization}
@@ -22,8 +41,8 @@ Therefore, the derivation and analysis of this equation constitutes a significan
 \subsection{Klein Paradox}\label{subsec:kleinParadox}
 
 Applying an electrostatic potential to graphene can create regions where electrons are classically forbidden due to energy constraints\cite{SoninPhysRevB2009}.
-For instance, a negative gate voltage can shift the Fermi level into the valence band, establishing a potential barrier that electrons do not have sufficient energy to overcome, according to classical physics\cite{DellAnnaJPhysCondMatt2018}.
-However, in graphene, electron transmission through such barriers can exhibit unusual behavior due to the Klein paradox.
+For instance, a gate voltage can shift the local band structure (i.e., the Dirac point) relative to the Fermi level, creating a p-type region in which, at the incident electron energy, only valence-band states are available; classically, electrons lack sufficient energy to surmount this potential barrier\cite{DellAnnaJPhysCondMatt2018}.
+However, in graphene, electron transmission through such barriers can exhibit unusual behavior due to the Klein paradox\cite{Young2009}.
 
 The Klein paradox describes the phenomenon where electrons in graphene can tunnel through electrostatic potential barriers with a probability approaching unity, even at perpendicular incidence, seemingly defying the principles of classical mechanics\cite{TrauzettelNature2007}.
 This counterintuitive transmission arises from the relativistic nature of electrons in graphene, where, within the barrier region, incident electrons can be converted into holes, allowing for unimpeded passage\cite{BernardiniJPhysAMathTheor2010}.
@@ -46,7 +65,7 @@ It enables electron spin manipulation without depending on magnetic fields, whic
 
 Furthermore, SOIR modifies the effective mass of charge carriers in graphene\cite{WangPhysRevX2016}.
 It can lead to the opening of an energy gap at the Dirac points, effectively giving the otherwise massless Dirac fermions a finite mass.
-In systems with strong spin-orbit coupling, such as certain heavy-hole systems, specific types of SOIR (like $k^3$-Rashba spin-orbit coupling) can even result in anisotropic band structures and the emergence of additional spin-degeneracy points under light illumination.
+In systems with strong spin-orbit coupling, such as certain heavy-hole systems, specific types of SOIR (like $k^3$-Rashba spin-orbit coupling) can even result in anisotropic band structures and the emergence of additional spin-degeneracy points under light illumination\cite{DellAnnaJPhysCondMatt2018, AvishaiPhysRevB2021}.
 While this specific example refers to heavy holes, the principle that SOIR can significantly alter the band structure and effective mass of carriers is relevant to graphene, particularly when considering proximity-induced effects from substrates with strong spin-orbit coupling\cite{GindikinPhysRevB2025}.
 The modification of the effective mass by SOIR can profoundly impact graphene's transport properties, influencing carrier mobility and the density of states.
 Notably, tuning the strength of SOIR in graphene can even induce a transition from the Klein tunneling regime (perfect transmission) to the anti-Klein tunneling regime (perfect reflection) when electrons encounter a potential barrier.
