@@ -1,19 +1,19 @@
 %! Author = Eduardo Serna
 
 % Preamble
-\documentclass[twocolumn, aps, prb, 10pt]{revtex4-2}
+\documentclass{../assets/templates/iopjournal}
 
 % Packages
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{graphicx} % For including images
+% \usepackage{graphicx} % Loaded by iopjournal.cls
 \usepackage{mathtools}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
-\usepackage{hyperref}
-\usepackage{amssymb}
+% \usepackage{hyperref} % Loaded by iopjournal.cls
+% \usepackage{amssymb} % Not required; comment to avoid tool warning
 
 \newcommand{\bn}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\mb}{\mbox}
@@ -23,17 +23,14 @@
 \begin{document}
 
 % Title Section
+    \articletype{Paper}
     \title{Quantum Dispersion in Mono-layer Graphene using Wave Packets and Rashba Spin-Orbit Interaction}
-    \author{Eduardo Serna}
+    \author{Eduardo Serna$^1$, I. Rodr\'iguez Vargas$^2$ and L. Diago-Cisneros$^3$}
+    \affil{$^1$Centro de Investigaci\'on en Ciencias, Universidad Aut\'onoma del Estado de Morelos, Morelos, 62209, M\'exico}
+    \affil{$^2$Unidad Acad\'emica de F\'isica, Universidad Aut\'onoma de Zacatecas, Zacatecas, 98060, M\'exico}
+    \affil{$^3$Facultad de F\'isica, Universidad de La Habana, La Habana, 10400, Cuba}
     \email{sernaed95@gmail.com}
-    \affiliation{Centro de Investigación en Ciencias, Universidad Autónoma del Estado de Morelos, Morelos, 62209, México}
-    \author{I. Rodríguez Vargas}
-    \email{isaac@uaz.edu.mx}
-    \affiliation{Unidad Académica de Física, Universidad Autónoma de Zacatecas, Zacatecas, 98060, México}
-    \author{L. Diago-Cisneros}
-    \email{ldiago@fisica.uh.cu}
-    \affiliation{Facultad de Física, Universidad de La Habana, La Habana, 10400, Cuba}
-    \date{\today}
+    \keywords{graphene, Rashba spin--orbit interaction, wave packets, electron transmission, spintronics}
 
 
 % Abstract
@@ -46,7 +43,6 @@
         The results emphasize the critical role that SOIR plays in engineering sophisticated quantum devices, offering potential applications in spintronic technologies and quantum computing.
     \end{abstract}
 
-    \maketitle
 
 % Table of Contents (optional)
 %    \tableofcontents
@@ -88,8 +84,8 @@
 %% Acknowledgments
 %    \section*{Acknowledgments}
 
-% References
-    \bibliographystyle{apsrev4-2}
-    \bibliography{bib/main}
+\section*{References}
+\bibliographystyle{unsrt}
+\bibliography{bib/main}
 
 \end{document}
