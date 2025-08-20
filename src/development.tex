@@ -17,7 +17,7 @@ Starting with the pristine graphene hamiltonian\cite{Geimk2007}:
 \end{equation}
 
 \noindent With $\vec{\mathbf{\sigma}} = \hat{\mathbf{\sigma}}_{x}\hat{\imath} + \hat{\mathbf{\sigma}}_{y}\hat{\jmath}$, being the pseudospin Pauli matrices $\hat{\mathbf{\sigma}}_{x} = \bigl(\begin{smallmatrix}
-                                                                                                                                                                                                   0&1 \\ 1&0
+0&1 \\ 1&0
 \end{smallmatrix} \bigr)$, $\hat{\sigma}_{y} = \bigl(\begin{smallmatrix}
                                                          0&-i \\ i&0
 \end{smallmatrix} \bigr)$, and $\vec{p}=\hat{p}_{x}\hat{\imath}+\hat{p}_{y}\hat{\jmath}$, the momentum operator, which $x, y$ components read $\hat{p}_{x} = -i\hbar\frac{\partial}{\partial x}$ and $\hat{p}_{y} = -i\hbar\frac{\partial}{\partial y}$, respectively.
@@ -39,7 +39,7 @@ From this point forward, $v_{\mb{\tiny F}}$ stands for the Fermi velocity of the
 \end{equation}
 This order-of-magnitude estimate is widely used for graphene\cite{Geimk2007}.
 
-The previous hamiltonian can be rewritten as:
+The previous Hamiltonian can be rewritten as:
 
 \begin{equation}
     \label{eq:pristineGrapheneMatrix}
@@ -50,13 +50,13 @@ The previous hamiltonian can be rewritten as:
     \end{pmatrix}.
 \end{equation}
 
-Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (quasi-one dimensional) semiconductor hetero-structures can be extended to the context of MLG-Q1D\cite{RDiago2010, Serna2019, RCDiagoEPL2015}, it follows that the hamiltonian for the SOIR can be written as:
+Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (quasi-one dimensional) semiconductor hetero-structures can be extended to the context of MLG-Q1D\cite{RDiago2010, Serna2019, RCDiagoEPL2015}, it follows that the Hamiltonian for the SOIR can be written as:
 
 \begin{equation}
     \label{eq:SOIRHamiltonian}
     \hat{\bn{H}}_R =
     \begin{pmatrix}
-        0                        & k_{\alpha-} + k_{\beta-} \\
+        0 & k_{\alpha-} + k_{\beta-} \\
         k_{\alpha+} + k_{\beta+} & 0
     \end{pmatrix},
 \end{equation}
@@ -72,7 +72,7 @@ For this research, we assume the heavy holes only in the region defined by the p
 
 The potential barrier is defined only in the specified region.
 
-With the following hamiltonian:
+With the following Hamiltonian:
 
 \begin{equation}
     \label{eq:potentialBarrierHamiltonian}
@@ -85,7 +85,7 @@ Adding up the graphene\eqref{eq:pristineGrapheneMatrix}, the SOIR\eqref{eq:SOIRH
     \label{eq:hybridHamiltonian}
     \hat{\bn{H}}=
     \begin{pmatrix}
-        V(x)                                                                                   & \left(k_{\alpha-}+k_{\beta-}\right)-i\hbar v_{\mb{\tiny F}}\frac{\partial}{\partial x} \\
+        V(x) & \left(k_{\alpha-}+k_{\beta-}\right)-i\hbar v_{\mb{\tiny F}}\frac{\partial}{\partial x} \\
         \left(k_{\alpha+}+k_{\beta+}\right)-i\hbar v_{\mb{\tiny F}}\frac{\partial}{\partial x} & V(x)
     \end{pmatrix}.
 \end{equation}
@@ -139,7 +139,7 @@ The main equation to solve is the time-dependent eigenvalue equation:
 \end{equation}
 
 In our case, we consider a Gaussian wave packet (GWP) for each component of the pseudospinor $\bn{\Psi}(x,t)=\begin{psmallmatrix*}
-                                                                                                                           \psi_A(x,t)\\\psi_B(x,t)
+\psi_A(x,t)\\\psi_B(x,t)
 \end{psmallmatrix*}$.
 The GWP at an initial time has the following form:
 
@@ -258,45 +258,45 @@ In this way, we can rewrite our system of equations, once the discretization and
 
 If we add Eq.\eqref{eq:partA} and Eq.\eqref{eq:partB}:
 
-\begin{widetext}
-    \begin{align}
-        \label{eq:temporaryEquation}
-        2\begin{pmatrix}
-             \psi_{A,1} + \psi_{B,1} \\
-             \psi_{A,2} + \psi_{B,2} \\
-             \vdots                  \\
-             \psi_{A,J} + \psi_{B,J} \\
-        \end{pmatrix} &=
-        \begin{pmatrix}
-            N      & Q      & 0      & \ldots & \ldots & \ldots & 0 \\
-            -Q     & N      & Q      & 0      & \ldots & \ldots & 0 \\
-            0      & -Q     & N      & Q      & 0      & \ldots & 0 \\
-            \vdots & 0      & -Q     & N      & Q      & \ddots & 0 \\
-            \vdots & \vdots & 0      & -Q     & N      & \ddots & 0 \\
-            \vdots & \vdots & \vdots & \ddots & \ddots & \ddots & Q \\
-            0      & 0      & 0      & 0      & 0      & -Q     & N
-        \end{pmatrix}\begin{pmatrix}
-                         \phi_{A,1} \\
-                         \phi_{A,2} \\
-                         \vdots     \\
-                         \phi_{A,J}
-        \end{pmatrix}\\
-        &+\begin{pmatrix}
-              M      & Q      & 0      & \ldots & \ldots & \ldots & 0 \\
-              -Q     & M      & Q      & 0      & \ldots & \ldots & 0 \\
-              0      & -Q     & M      & Q      & 0      & \ldots & 0 \\
-              \vdots & 0      & -Q     & M      & Q      & \ddots & 0 \\
-              \vdots & \vdots & 0      & -Q     & M      & \ddots & 0 \\
-              \vdots & \vdots & \vdots & \ddots & \ddots & \ddots & Q \\
-              0      & 0      & 0      & 0      & 0      & -Q     & M
-        \end{pmatrix}\begin{pmatrix}
-                         \phi_{B,1} \\
-                         \phi_{B,2} \\
-                         \vdots     \\
-                         \phi_{B,J}
-        \end{pmatrix}
-    \end{align}
-\end{widetext}
+
+\begin{align}
+    \label{eq:temporaryEquation}
+    2\begin{pmatrix}
+         \psi_{A,1} + \psi_{B,1} \\
+         \psi_{A,2} + \psi_{B,2} \\
+         \vdots                  \\
+         \psi_{A,J} + \psi_{B,J} \\
+    \end{pmatrix} &=
+    \begin{pmatrix}
+        N      & Q      & 0      & \ldots & \ldots & \ldots & 0 \\
+        -Q     & N      & Q      & 0      & \ldots & \ldots & 0 \\
+        0      & -Q     & N      & Q      & 0      & \ldots & 0 \\
+        \vdots & 0      & -Q     & N      & Q      & \ddots & 0 \\
+        \vdots & \vdots & 0      & -Q     & N      & \ddots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \ddots & \ddots & Q \\
+        0      & 0      & 0      & 0      & 0      & -Q     & N
+    \end{pmatrix}\begin{pmatrix}
+                     \phi_{A,1} \\
+                     \phi_{A,2} \\
+                     \vdots     \\
+                     \phi_{A,J}
+    \end{pmatrix}\\
+    &+\begin{pmatrix}
+          M      & Q      & 0      & \ldots & \ldots & \ldots & 0 \\
+          -Q     & M      & Q      & 0      & \ldots & \ldots & 0 \\
+          0      & -Q     & M      & Q      & 0      & \ldots & 0 \\
+          \vdots & 0      & -Q     & M      & Q      & \ddots & 0 \\
+          \vdots & \vdots & 0      & -Q     & M      & \ddots & 0 \\
+          \vdots & \vdots & \vdots & \ddots & \ddots & \ddots & Q \\
+          0      & 0      & 0      & 0      & 0      & -Q     & M
+    \end{pmatrix}\begin{pmatrix}
+                     \phi_{B,1} \\
+                     \phi_{B,2} \\
+                     \vdots     \\
+                     \phi_{B,J}
+    \end{pmatrix}
+\end{align}
+
 
 \noindent where $N =1 + \frac{i\delta t}{2\hbar} \left( V_j + \left(k_{\alpha+,j}+k_{\beta+,j}\right)\right)$, $Q=\frac{i\hbar v_{\mb{\tiny F}}}{2\delta x}$ and $M =1 + \frac{i\delta t}{2\hbar}\left( V_j + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\right)$.
 
