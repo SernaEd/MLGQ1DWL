@@ -64,16 +64,16 @@ Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (qua
 \noindent Where $k_{\alpha\pm} = \alpha\left(k_{\pm}^2/k_{\mp}\right)$ and $k_{\beta\pm} = \beta k_{\pm}^3$; also defining that $k_{\pm}=k_x\pm i k_y$ which are the initial wave numbers of the system.
 The symbols $\alpha$ and $\beta$ represent the linear and cubic contribution of the SOIR respectively.
 
-Following the symmetry-based arguments and k\,$\cdot$\,p analysis summarized in Ref.~\cite{Serna2019} and the derivation for 1D-confined heavy holes in Ref.~\cite{RCDiagoEPL2015}, the leading Rashba invariants under structural inversion asymmetry and quasi-1D confinement produce off-diagonal momentum structures combining a term proportional to $k_{\pm}^2/k_{\mp}$ and a cubic term proportional to $k_{\pm}^3$.
+\textcolor{red}{Following the symmetry-based arguments and k\,$\cdot$\,p analysis summarized in Ref.~\cite{Serna2019} and the derivation for 1D-confined heavy holes in Ref.~\cite{RCDiagoEPL2015}, the leading Rashba invariants under structural inversion asymmetry and quasi-1D confinement produce off-diagonal momentum structures combining a term proportional to $k_{\pm}^2/k_{\mp}$ and a cubic term proportional to $k_{\pm}^3$.
 Our model adopts precisely these invariants as an \emph{effective} SOIR inside the barrier region to emulate strong spin--momentum coupling under inversion asymmetry and transverse-mode selection ($k_y\!\to\!0$).
 This transfer of functional form is justified at the level of symmetry and low-energy gradient expansion: (i) the barrier region breaks inversion along $z$, (ii) transport is operated near a single transverse mode (Q1D), and (iii) only in-barrier states feel the effective SOIR\@.
-Therefore, employing the heavy-hole Rashba Hamiltonian as an effective barrier term in our Q1D graphene setup is consistent with the arguments reviewed in Ref. \cite{Serna2019} and the construction in Ref. \cite{RCDiagoEPL2015}.
+Therefore, employing the heavy-hole Rashba Hamiltonian as an effective barrier term in our Q1D graphene setup is consistent with the arguments reviewed in Ref. \cite{Serna2019} and the construction in Ref. \cite{RCDiagoEPL2015}.}
 
 \input{alpha-beta-values-en}
 
 %We are also taking into account that $\alpha = -\beta$, following the conclusions presented by Wong and Mireles\cite{WongUNAM2005}.
 
-For this research, we do not change the carrier type (Dirac fermions); rather, we assume that only the barrier region hosts an effective Rashba-like SOIR with the momentum dependence in Eq.~\eqref{eq:SOIRHamiltonian}, while pristine regions remain Rashba-free.
+\textcolor{red}{For this research, we do not change the carrier type (Dirac fermions); rather, we assume that only the barrier region hosts an effective Rashba-like SOIR with the momentum dependence in Eq.~\eqref{eq:SOIRHamiltonian}, while pristine regions remain Rashba-free.}
 
 The potential barrier is defined only in the specified region.
 
@@ -249,17 +249,17 @@ To discretize the derivatives, we use the Taylor series expansion up to the firs
 
 In this way, we can rewrite our system of equations, once the discretization and algebraic development of the matrix have been performed:
 
-\begin{multline}
-    \label{eq:partA}
-    \phi_{A, j} + \frac{i\delta t}{2\hbar}(V_j\phi_{A,j} + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\phi_{B,j}-\\
+\begin{equation}
+        \label{eq:partA}
+    \phi_{A, j} + \frac{i\delta t}{2\hbar}(V_j\phi_{A,j} + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\phi_{B,j}-
     i\hbar v_{\mb{\tiny F}}\frac{\phi_{B, j+1}-\phi_{B, j-1}}{2\delta x}) = 2\psi_{A,j}
-\end{multline}
+\end{equation}
 
-\begin{multline}
+\begin{equation}
     \label{eq:partB}
-    \phi_{B, j} + \frac{i\delta t}{2\hbar}(V_j\phi_{B,j} + \left(k_{\alpha+,j}+k_{\beta+,j}\right)\phi_{A,j}-\\
+    \phi_{B, j} + \frac{i\delta t}{2\hbar}(V_j\phi_{B,j} + \left(k_{\alpha+,j}+k_{\beta+,j}\right)\phi_{A,j}-
     i\hbar v_{\mb{\tiny F}}\frac{\phi_{A, j+1}-\phi_{A, j-1}}{2\delta x}) = 2\psi_{B,j}
-\end{multline}
+\end{equation}
 
 If we add Eq.\eqref{eq:partA} and Eq.\eqref{eq:partB}:
 

@@ -1,22 +1,5 @@
 The following figures were obtained using the procedure described previously.
 
-\begin{figure}[h!]
-    \centering
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../assets/images/No-Rashba/TCoefficient(1.0,0)xalpha=0beta=0}
-        \caption{Transmission coefficient ($T$) in pristine graphene with initial pseudospinor configuration $\xi = (1, 0)$, plotted against potential barrier height ($V_b$, in meV) and initial wave vector ($k_0$, in \AA$^{-1}$). The 3D plot and 2D heatmap show that transmission is largely independent of the initial wave vector but decreases slightly as the barrier height increases (from ~1 to ~0.990).}
-        \label{fig:noRashba}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../assets/images/Rashba/TCoefficient(1.0,0)xalpha=0.2beta=-0.2}
-        \caption{Transmission coefficient ($T$) versus potential barrier height ($V_b$) and initial wave number ($k_0$) for an initial pseudospinor configuration $\xi = (1, 0)$. The 3D surface and 2D colormap reveal a non-monotonic dependence on $V_b$ and $k_0$, highlighting the influence of spin–orbit coupling on transmission through the barrier.}
-        \label{fig:rashba}
-    \end{minipage}
-\end{figure}
-
 In the images, we can observe certain interesting aspects, starting with Fig.~\ref{fig:noRashba}.
 The image presents two graphs that illustrate the transmission coefficient ($T$) as a function of $V_b$ (in meV) and $k_0$ (in \AA$^{-1}$) for a fixed value of $\xi = (1, 0)$.
 The left graph is a three-dimensional visualization where $T$ is on the $z$-axis, $V_b$ on the $x$-axis, and $k_0$ on the $y$-axis, with a color scale that varies from dark purple (lower $T$) to bright yellow (higher $T$).
@@ -26,6 +9,18 @@ As $V_b$ increases, $T$ tends to decrease, while the dependence on $k_0$ is mini
 In general, the graphs demonstrate how $T$ changes with variations in $V_b$ and $k_0$, highlighting a slight decrease in $T$ as $V_b$ increases and an insignificant change with respect to $k_0$.
 
 This result shows a contradiction with what is already specified in the literature, as in graphene, total transmission would be expected due to the material's inherent properties\cite{horsell2008, Young2009}.
+
+\begin{figure}%[!ht]
+    \centering
+   % \begin{minipage}[t]{0.48\textwidth}
+        %\centering
+        \includegraphics[width=0.88\textwidth]
+        {../assets/images/No-Rashba/TCoefficient(1.0,0)xalpha=0beta=0}
+        \caption{Transmission coefficient ($T$) in pristine graphene with initial pseudospinor configuration $\xi = (1, 0)$, plotted against potential barrier height ($V_b$, in meV) and initial wave vector ($k_0$, in \AA$^{-1}$). The 3D plot and 2D heatmap show that transmission is largely independent of the initial wave vector but decreases slightly as the barrier height increases (from ~1 to ~0.990).}
+        \label{fig:noRashba}
+   % \end{minipage}
+    \end{figure}
+   %\hfill
 
 These observed differences can be primarily attributed to the following aspects related to our method and simulation conditions:
 
@@ -42,6 +37,15 @@ These observed differences can be primarily attributed to the following aspects 
     As suggested in the literature\cite{MolgadoMex2018}, when a sufficiently wide Gaussian wave packet evolves temporally, it disperses spatially in such a way that different parts of it simultaneously interact with the barrier, causing internal interferences with itself.
     Such interference is a possible additional cause of the fluctuations in transmission observed in our numerical results.
 \end{itemize}
+    
+\begin{figure}%[!ht]    
+   % \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.88\textwidth]{../assets/images/Rashba/TCoefficient(1.0,0)xalpha=0.2beta=-0.2}
+        \caption{Transmission coefficient ($T$) versus potential barrier height ($V_b$) and initial wave number ($k_0$) for an initial pseudospinor configuration $\xi = (1, 0)$. The 3D surface and 2D colormap reveal a non-monotonic dependence on $V_b$ and $k_0$, highlighting the influence of spin–orbit coupling on transmission through the barrier.}
+        \label{fig:rashba}
+   % \end{minipage}
+\end{figure}
 
 These points clearly explain the differences found from a methodological perspective and link our numerical results to the theoretical prediction mentioned in previous studies.
 This not only clarifies the apparent contradiction but also clearly reinforces the connection between our specific results and the main objective of analyzing dynamic effects and properties that arise when using Gaussian wave packets in quantum tunneling simulations in graphene-based systems.
