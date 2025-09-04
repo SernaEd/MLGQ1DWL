@@ -1,42 +1,22 @@
-Quantum dispersion in graphene, understood as the relationship between energy levels and their respective wave vectors, is essential for explaining the outstanding electronic and transport properties observed in this unique two-dimensional material.
-Its hexagonal lattice structure generates massless Dirac fermions, which gives rise to particular quantum phenomena such as extremely high mobility, ballistic transport at micrometric scales, and intrinsic absence of a band gap\cite{Geimk2007}.
-Among these phenomena, it is especially interesting to study the role of SOIR, which can significantly modify electronic behavior and lead to novel interference and scattering effects related to electron spin.
+% Introduction: Quantum Dispersion and Dirac Fermion Tunneling in Graphene
 
-A central theme of this work is the intertwined role of pseudospin (sublattice), real spin, and carrier momentum in graphene.
-Their coupling—through chirality in pristine graphene and through SOIR in proximitized or field-engineered systems—governs boundary matching, mode mixing, and transmission across electrostatic profiles.
-This interrelation can drive counterintuitive transport regimes, including the suppression of the normally perfect Klein transmission (anti-Klein tunneling) under suitable Rashba strengths, confinement conditions, and barrier parameters\cite{Young2009, DellAnnaJPhysCondMatt2018}.
-In what follows, we make this connection explicit by analyzing how the effective Rashba coupling within the barrier reshapes wave-packet dynamics and transmission resonances.
-The precise understanding of these interactions is critical not only from a theoretical perspective but also represents the fundamental basis for emerging technological applications in strategic areas such as spintronics and quantum computing\cite{WeizheMaterials2017, AvsarNatCommun2014, LiuNano2023}.
-In this context, the eigenvalue equation provides the fundamental framework for analyzing electronic transport, with its numerical solution being particularly suitable through robust methods such as the finite difference technique (FDM)\cite{Carrillo2015}.
-Consequently, the central objective of this work is to calculate in detail the energy dispersion relations for electrons in monolayer graphene under SOIR interaction using Gaussian wave packets, highlighting how these quantum effects can be exploited for the advanced engineering of nanotechnological devices specialized in spintronic and quantum information applications.
-
-It is equally important to emphasize the relevance of SOIR as a general phenomenon that manifests well beyond graphene.
-SOIR arises from structural inversion asymmetry and appears across diverse platforms, including semiconductor two-dimensional electron gases, oxide interfaces, topological-insulator surfaces, transition-metal dichalcogenides, heavy-metal/ferromagnet bilayers, and van der Waals heterostructures.
-Emphasizing this generality clarifies that the mechanisms discussed here—spin splitting, spin–momentum locking, modified transmission resonances, and Klein-to–anti-Klein crossovers—have broader significance and can inform the design of spintronic and quantum devices across these material families\cite{ManchonNatureMater2015}.
-
-We also need to to clarify our modeling scope regarding Rashba spin–orbit coupling in graphene.
+Graphene exhibits a linear dispersion near the Dirac points, leading to massless Dirac-fermion behavior.
+The phenomenon of Klein tunneling—perfect transmission of carriers at normal incidence through high potential barriers—is a hallmark of such systems.
+Conversely, bilayer graphene shows anti-Klein tunneling, i.e., total reflection at normal incidence in the absence of a bandgap.
+Over the past decade, both theoretical predictions and experimental validations of these phenomena have matured significantly, particularly in monolayer and few-layer graphene systems.
 
 In pristine monolayer graphene, the canonical (Dirac–Rashba) term is typically very small (often quoted in the $\mu$eV range), and thus it is commonly neglected for transport at the energy and length scales considered here.
-
 This is the rationale behind not including the standard Dirac–Rashba term explicitly in the pristine regions of our model.
-However, the literature also reports proximity-induced scenarios where a giant Rashba coupling can emerge, for example in graphene interfaced with transition-metal dichalcogenides or in systems with Au adatoms/intercalation, leading to effective SOC values in the meV–tens of meV range\cite{AvsarNatCommun2014, WangPhysRevX2016}.
+However, the literature also reports proximity-induced scenarios where a giant Rashba coupling can emerge.
+For example, in graphene interfaced with transition-metal dichalcogenides or in systems with Au adatoms/intercalation, leading to effective SOC values in the meV–tens of meV range\cite{AvsarNatCommun2014, WangPhysRevX2016}.
 
 In such cases, the canonical Dirac–Rashba term should be included and its impact on wave-packet propagation analyzed (e.g., stronger spin splitting, spin precession, modified transmission resonances, and even transitions from Klein to anti-Klein regimes).
-
 In the present study we focus on the pristine-graphene limit where the canonical term is negligible, while we model proximity-induced effects within the barrier via an effective Rashba-like coupling, as detailed in Sec.~\ref{subsec:mathematical-model}.
-
 
 Finally, it is worth noting that one of the essential aspects addressed in this work lies in the precise analytical formulation of the current vector, whose analytical expression is given by equation\eqref{eq:componentes}.
 This expression is the standard charge-current operator associated with the Dirac–Rashba model in graphene and has been discussed in prior literature\cite{AvishaiPhysRevB2021}.
 Our contribution is to employ this established result to perform a component-wise and correlation-based analysis tailored to time-resolved Gaussian wave-packet transport under SOIR, which provides practical interpretability of the numerical transmission features reported in this study.
 
-
-%\subsection{Weak Localization}\label{subsec:weak-localization}
-%
-%        Weak localization (WL) and weak antilocalization (WAL) are quantum phenomena arising from the interference of electron waves in disordered materials.
-%         In graphene, these effects are heavily influenced by spin-orbit interactions (SOI), which describe the coupling between an electron's spin and its momentum.
-%          Strong SOI can cause a transition from WL to WAL, modifying the phase coherence length (the distance over which electron waves maintain their phase relationship) and impacting electrical conductivity\cite{WeizheMaterials2017,AvsarNatCommun2014}.
-%           This transition is crucial for understanding spin interactions within graphene and designing quantum devices.
 
 \subsection{Klein Paradox}\label{subsec:kleinParadox}
 
@@ -71,20 +51,42 @@ These dispersion changes can significantly impact mobility and the density of st
 Notably, tuning SOIR in graphene can drive crossovers between Klein and anti-Klein tunneling across electrostatic barriers\cite{DellAnnaJPhysCondMatt2018}.
 This control of barrier transmission via SOIR underpins opportunities for spintronic and quantum devices\cite{YaoMater2024}.
 
+\subsection{State of the Art}\label{subsec:state-of-the-art}
+
+The theoretical foundations of Dirac fermion tunneling in graphene have been extensively developed over the past decade.
+Early theoretical work established that in monolayer graphene, carriers preserve pseudospin alignment, leading to unit transmission at normal incidence regardless of barrier height\cite{Chen2016}.
+In bilayer graphene, the Berry phase differs, resulting in anti-Klein tunneling where normal incidence yields zero transmission\cite{Du2018}.
+Further theoretical contributions revealed the potential for tuning between anti-Klein and Klein regimes in bilayer graphene by introducing a tunable bandgap via perpendicular electric fields\cite{Du2018}.
+Electron-optics analogies, such as negative refraction and Veselago lenses, were proposed, and models incorporating smooth versus abrupt barriers, superlattices, and periodic scatterers were developed to describe how pseudospin conservation can be manipulated or suppressed to control tunneling\cite{Walls2015,An2020}.
+
+Experimental verification of these theoretical predictions has provided compelling evidence for the unique transport properties of graphene.
+Electron-optics experiments confirmed negative refraction and angular-dependent transmission using ballistic graphene p–n junctions in encapsulated devices\cite{Chen2016}.
+STM studies demonstrated quasi-bound states in nanometric graphene quantum dots, evidencing partial confinement of Dirac fermions despite Klein tunneling\cite{Gutierrez2016}.
+Visualization of electron flow through a Veselago lens using scanning gate microscopy provided direct imaging of electron focusing effects\cite{Brun2019}.
+In bilayer graphene Fabry–Pérot interferometers, tuning the Fermi energy allowed observation of Berry phase evolution from $2\pi$ to $\pi$, accompanied by the transition from anti-Klein to Klein tunneling regimes\cite{Du2018}.
+The clearest demonstration of both Klein and anti-Klein tunneling in a single experimental platform was achieved via a Corbino geometry device, establishing angle-resolved transmission characteristics consistent with theoretical predictions\cite{Elahi2024}.
+
+Device applications leveraging these fundamental phenomena have shown significant promise.
+Klein tunnel field-effect transistors (GKTFETs) exploit angular filtering using crossed p–n junctions to achieve current modulation without a bandgap\cite{Tan2017}.
+Theoretical models forecast ON/OFF ratios above $10^4$ and steep subthreshold slopes under ideal conditions.
+Experimental prototypes yielded ON/OFF ratios of approximately 10 and demonstrated current saturation and enhanced output resistance, indicating potential for high-frequency analog applications\cite{Wang2019}.
+Valley-selective Klein tunneling via superlattice barriers has been proposed as a route to valleytronic devices, though experimental realization remains pending\cite{An2020}.
+
+
+\subsection{Critical analysis and opportunities}\label{subsec:future-work}
+
+Despite significant advances in both theoretical understanding and experimental validation, several critical challenges and opportunities remain for future research in graphene-based quantum transport.
+
+Klein tunnel transistors exhibit limited ON/OFF contrast due to edge scattering; strategies such as edgeless geometries or improved gating precision could address this limitation.
+Valley-filtering mechanisms, while theoretically robust, lack experimental validation; designing patterned substrates or moiré structures may provide a viable path forward.
+The exploration of trilayer graphene in terms of intermediate Berry phases and angular transmission profiles remains largely unexplored territory with significant potential.
+
+Integration of electron-optics elements such as lenses and collimators in circuit-level architectures may unlock novel functional devices that leverage the unique properties of Dirac fermions.
+Investigating hybrid systems that combine tunneling control with superconductivity, strong magnetic fields, or moiré engineering presents a particularly promising frontier for future technological developments.
+
+The transition from fundamental scientific curiosity to applied quantum engineering underscores graphene's remarkable adaptability and potential for transformative applications.
+Addressing current technical limitations while extending the established concepts to valleytronics and multilayer systems offers concrete research opportunities that can translate the unique physics of Dirac fermions into revolutionary electronic and optoelectronic technologies.
+
 In the next section, the physical-mathematical model adopted in this study will be described in detail.
 Building on the conceptual foundation presented earlier regarding quantum dispersion and Rashba-type spin-orbit interaction, the system and corresponding equations that allow numerical simulation of the phenomena observed in our results will be defined.
 
-
-%    \subsection{Quantum Dispersion and Anomalous Hall Effect}\label{subsec:quantum-dispersion-and-anomalous-hall-effect}
-%
-%    These interactions also impact quantum dispersion, the relationship between an electron's energy and momentum.
-%    The anomalous Hall effect (AHE), where a transverse voltage arises without an external magnetic field, has been observed in edge-bonded monolayer graphene\cite{LiuNano2023}.
-%     This demonstrates both ordinary and anomalous Hall effects, indicating long-range ferromagnetic order (spontaneous alignment of electron spins) and suggesting applications in carbon-based spintronics\cite{YaoMater2024}.
-%      The theoretical prediction of the quantum anomalous Hall (QAH) effect in graphene-based heterostructures further highlights the potential for hosting non-trivial topological phases.
-%
-%
-%    Electrostatic potential and Rashba spin-orbit interaction dramatically alter electron transmission in graphene, even at perpendicular incidence, defying the Klein paradox.
-%
-%This results from the potential generating a classically forbidden region, SOIR breaking spin degeneracy and modifying the heavy hole's effective mass, spin-dependent scattering at interfaces, the emergence of quasi-bound states that enable resonant tunneling, and the heavy hole's effective mass playing a crucial role in tunneling dynamics.
-%
-%      These factors, particularly the deviation from the Dirac point dispersion relation, significantly modify transmission, requiring further computational and experimental investigation to fully elucidate this phenomenon and refine our understanding of graphene electron transport.
