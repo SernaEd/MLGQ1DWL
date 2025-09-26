@@ -42,7 +42,7 @@ These observed differences can be primarily attributed to the following aspects 
    % \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=0.88\textwidth]{../assets/images/Rashba/TCoefficient(1.0,0)xalpha=0.2beta=-0.2}
-        \caption{Transmission coefficient ($T$) versus potential barrier height ($V_b$) and initial wave number ($k_0$) for an initial pseudospinor configuration $\xi = (1, 0)$. The 3D surface and 2D colormap reveal a non-monotonic dependence on $V_b$ and $k_0$, highlighting the influence of spin–orbit coupling on transmission through the barrier.}
+        \caption{Transmission coefficient ($T$) versus potential barrier height ($V_b$) and initial wave number ($k_0$) for an initial pseudospinor configuration $\xi = (1, 0)$. The 3D surface and 2D colormap reveal a non-monotonic dependence on $V_b$ and $k_0$, highlighting the influence of spin–orbit coupling on transmission through the barrier. \textcolor{green}{The complex transmission patterns observed in this figure are fundamentally driven by channel interference effects between the $\Psi_A$ and $\Psi_B$ pseudospinor components. Under SOIR conditions, these channel interference effects become significantly enhanced due to the spin-momentum coupling terms in the Hamiltonian. The cross-coupling terms $\Psi_A^\dagger\Psi_B + \Psi_B^\dagger\Psi_A$ in the probability current density (Eq.~\ref{eq:componentes}) create constructive and destructive interference patterns that vary with both barrier height and initial wave number. This interference modulation explains the non-monotonic transmission behavior: as $k_0$ increases, the relative phases between pseudospinor components change, leading to alternating regions of enhanced and suppressed transmission. Similarly, varying $V_b$ affects the barrier penetration depth differently for each pseudospinor component, creating complex interference patterns that manifest as the intricate transmission landscape visible in both the 3D surface and 2D colormap. These channel interference effects represent a fundamental quantum mechanical phenomenon that distinguishes SOIR-influenced transport from classical or pristine graphene behavior.}}
         \label{fig:rashba}
    % \end{minipage}
 \end{figure}
@@ -59,7 +59,8 @@ As $k_0$ increases and $V_b$ decreases, the transmission approaches 1, indicatin
 Although the variation in the transmission coefficient is small (on the order of $10^{-2}$), it is significant and attributable to the SOIR interaction.
 
 The electrons, with their different pseudospin components, interact, and this interaction is affected by the initial wave number of the Gaussian wave packet (GWP), as observed in previous studies\cite{Serna2019}.
-Therefore, SOIR modulates the interaction, which in turn causes the fluctuations observed in the transmission coefficient.
+This interaction manifests as channel interference between the $\Psi_A$ and $\Psi_B$ components of the pseudospinor, as evidenced by the cross-coupling terms in equation~\ref{eq:componentes}.
+Therefore, SOIR modulates this channel interference, which in turn causes the fluctuations observed in the transmission coefficient.
 
 It is important to highlight here that the expression for the current vector used in our analysis (Eq. \ref{eq:componentes}) follows directly from the standard Dirac–Rashba Hamiltonian for graphene and has been reported in related contexts\cite{AvishaiPhysRevB2021}.
 In this work, we leverage that established expression to (i) decompose the current into pseudospinorial components and (ii) quantify cross-correlations induced by the Rashba interaction, which jointly enable a clear interpretation of the numerical trends observed in our time-dependent wave-packet simulations.
