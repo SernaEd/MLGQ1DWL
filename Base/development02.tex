@@ -1,38 +1,40 @@
 \subsection{Physical Model}\label{subsec:physical-model}
 
-We model a nanoribbon formed by MLG encapsulated on hexagonal boron nitride and capped with SiO$_2$ [see Fig.\ref{fig:physical-model}]. Two metallic electrodes A and B [see Fig.\ref{fig:physical-model}] generate a perpendicular electric field that drives a Gaussian wave packet (GWP) along the MLG strip. A rectangular electrostatic quantum barrier (QB) -generated \textit{via} a gate-voltage $V_{b}$ [see Fig.\ref{fig:physical-model}]-, defines the scattering region where the SOIR is active.
+We model a quantum channel formed by monolayer graphene (MLG) encapsulated on hexagonal boron nitride and capped with SiO$_2$.
+Two metallic electrodes generate a perpendicular electric field that guides a Gaussian wave packet (GWP) along the channel.
+A rectangular electrostatic barrier defines the scattering region where the SOIR is active.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{../assets/images/GrapheneFinal}
-    \caption{Schematic representation of the layered-heterostructure device showing the SiO$_2$ capping layer (gray), the hexagonal boron nitride (transparent - text in orange), and the MLG (red) with a coordinate system. The inset shows the detailed atomic structure of the MLG. The plates A, B (yellow) constrain electrostatically the fD along the MLG nanoribbon (blue); meanwhile the electrode $V_{b}$ (yellow) induces a biased rectangular QB by means of a gate-voltage, which scatters fD that travel the MLG nanoribbon. Related setups and parameters were detailed by us previously\cite{Serna2019}.}
+    \includegraphics[width=0.8\textwidth]{../assets/images/sandwichGrafeno_pantalla}
+    \caption{Schematic representation of the layered heterostructure showing the SiO$_2$ capping layer, hexagonal boron nitride (BN), and monolayer graphene with a coordinate system. The inset shows the detailed atomic structure of the graphene monolayer.}
     \label{fig:physical-model}
 \end{figure}
 
-Gating has been proven as an essential tool to unveil the exotic and unprecedented phenomena in graphene. With gating becomes possible to tune the Fermi energy as well as to create potential QBs in graphene\cite{Young2009}. Regarding the SOIR graphene Min et al. (Phys Rev. B 74, 165310 (2006)) consider that is reachable with an external electric field of the type used to manipulate the Fermi energy, that is, with standard gating. So, in principle, our top-gated layered-heterostructure device [see Fig.\ref{fig:physical-model}] is able to induce SOIR\cite{Serna2019}.
-Regarding that graphene is not longer pristine under gating, it is true, in fact it is well accepted that the Hamiltonian has three contributions: the pristine, Rashba and intrinsic SOC (Phys. Rev. B 87, 125405 (2013), Phys. Rev. B 74, 165310 (2006), Phys. Rev. B 85, 115439 (2012)). Even, by optimizing the substrate upon which graphene is deposited the Rashba term can be dominant (Phys. Rev. Lett. 101, 157601 (2008)). Moreover, if we have a potential barrier localized at certain region we have to add an extra diagonal term V(x). 
-In our case we are considering a Q1D system, and as far as we know there is no Hamiltonian reported so far that accounts for the Rashba SOC interaction under this dimensionality. So, we are assuming that the momentum dependence of the well-known Rashba Hamiltonian for Q1D semiconductor heterostructures (Rev. Cub. Fís. 27, 212 (2010), Eur. Phys. Lett. 110, 67001 (2015)), eqs. (3) and (4), can be extended to the context of Q1D graphene structures. 
-To what extent this assumption is correct or not it will depend on a formal derivation of the corresponding Hamiltonian under the geometrical and structural conditions of our system and/or experimental results that support or dismissed it. For the moment we are considering that the mentioned Hamiltonian captures the essential physics of our problem. In fact, the perfect backscattering that we found it is also reported by Dell’Anna et al. (J. Phys.: Condens. Matter 30, 415301 (2018)). In concrete, they find that by tuning the Rashba SOC interaction in monolayer graphene the transmission of charge carriers through a potential barrier can go from Klein tunneling to anti-Klein tunneling (perfect backscattering).
-
+Related setups and parameters are detailed in one of our previous articles\cite{Serna2019}.
 
 \subsection{Mathematical Model}\label{subsec:mathematical-model}
 
-From the proposed physical device [see Fig.\ref{fig:physical-model}], we can get a mathematical model, which describes the temporal evolution and consequently the quantum scattering of the fD in the MLG.
+From the physical model, we can get a mathematical model which describes the temporal evolution and consequently the quantum dispersion of the Dirac fermions in the MLG\@.
 
-Starting with the pristine graphene Hamiltonian\cite{Geimk2007}:
+Starting with the pristine graphene hamiltonian\cite{Geimk2007}:
 
 \begin{equation}
     \label{eq:pristGr}
     \hat{\bn{H}}_G = v_{\mb{\tiny F}}\vec{\mathbf{\sigma}}\cdot\vec{p},
 \end{equation}
 
-\noindent with $\vec{\mathbf{\sigma}} = \hat{\mathbf{\sigma}}_{x}\hat{\imath} + \hat{\mathbf{\sigma}}_{y}\hat{\jmath}$, being the pseudospin Pauli matrices $\hat{\mathbf{\sigma}}_{x} = \bigl(\begin{smallmatrix}
+\noindent With $\vec{\mathbf{\sigma}} = \hat{\mathbf{\sigma}}_{x}\hat{\imath} + \hat{\mathbf{\sigma}}_{y}\hat{\jmath}$, being the pseudospin Pauli matrices $\hat{\mathbf{\sigma}}_{x} = \bigl(\begin{smallmatrix}
 0&1 \\ 1&0
 \end{smallmatrix} \bigr)$, $\hat{\sigma}_{y} = \bigl(\begin{smallmatrix}
                                                          0&-i \\ i&0
 \end{smallmatrix} \bigr)$, and $\vec{p}=\hat{p}_{x}\hat{\imath}+\hat{p}_{y}\hat{\jmath}$, the momentum operator, which $x, y$ components read $\hat{p}_{x} = -i\hbar\frac{\partial}{\partial x}$ and $\hat{p}_{y} = -i\hbar\frac{\partial}{\partial y}$, respectively.
 
-The standard Rashba coupling for MLG (often written, in a four-component basis, as $\hat{H}_{\mathrm{DR}}=\lambda_R(\sigma_x s_y-\sigma_y s_x)$, with $s_i$ Pauli matrices in real-spin space) is generally very weak in pristine samples. In our baseline configuration (pristine regions), we therefore neglect $\hat{H}_{\mathrm{DR}}$, consistent with typical estimates where $\lambda_R \ll \hbar v_F k_0$ and $\lambda_R \ll V_b$ at the scales of interest. By contrast, in proximity-engineered heterostructures (e.g., graphene on TMDs or with Au), $\lambda_R$ can be enhanced to meV scales\cite{AvsarNatCommun2014, WangPhysRevX2016}.
+The standard Rashba coupling for monolayer graphene (often written, in a four-component basis, as $\hat{H}_{\mathrm{DR}}=\lambda_R(\sigma_x s_y-\sigma_y s_x)$, with $s_i$ Pauli matrices in real-spin space) is generally very weak in pristine samples.
+
+In our baseline configuration (pristine regions), we therefore neglect $\hat{H}_{\mathrm{DR}}$, consistent with typical estimates where $\lambda_R \ll \hbar v_F k_0$ and $\lambda_R \ll V_b$ at the scales of interest.
+
+By contrast, in proximity-engineered heterostructures (e.g., graphene on TMDs or with Au), $\lambda_R$ can be enhanced to meV scales\cite{AvsarNatCommun2014, WangPhysRevX2016}.
 
 In such cases, the canonical Dirac--Rashba term must be explicitly included in the Hamiltonian (together with the corresponding four-component spinor structure), and its consequences on wave-packet dynamics and transmission should be analyzed. We delineate this extension at the end of this subsection.
 

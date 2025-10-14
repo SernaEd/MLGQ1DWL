@@ -1,0 +1,95 @@
+%! Author = Eduardo Serna
+
+% Preamble
+\documentclass{../assets/templates/iopjournal}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amssymb}
+\usepackage{orcidlink}
+
+\newcommand{\bn}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\mb}{\mbox}
+\newcommand{\angstrom}{\textup{\AA}}
+
+% Document
+\begin{document}
+\articletype{Paper}
+
+    \title{Quantum Dispersion in Mono-layer Graphene using Wave Packets and Rashba Spin-Orbit Interaction}
+    
+    \author{Eduardo Serna$^1$\orcidlink{0000-0003-2090-7067}, I. Rodr\'iguez Vargas$^2$ and L. Diago-Cisneros$^3$\orcidlink{0000-0001-9409-1545}}
+    
+    \affil{$^1$Centro de Investigación en Ciencias, Universidad Autónoma del Estado de Morelos, Av. Universidad 1001 Col. Chamilpa, 62209, Cuernavaca, Morelos, México; sernaed95@gmail.com}
+       
+    \affil{$^2$Unidad Académica de Ciencia y Tecnología de la Luz y la Materia, Universidad Autónoma de Zacatecas, Circuito Marie Curie S/N, Parque de Ciencia y Tecnología QUANTUM Ciudad del Conocimiento, 98160 Zacatecas, Zacatecas, México}
+    
+    \affil{$^3$Facultad de Física, Universidad de La Habana, La Habana, 10400, Cuba}
+    
+    
+    \affil{$^*$L. Diago-Cisneros.Author to whom any correspondence should be addressed}
+    \email{ldiago@fisica.uh.cu}
+    
+    \keywords{graphene, Rashba spin--orbit interaction, wave packets, electron transmission, spintronics}
+
+% Abstract
+    \begin{abstract}
+        This paper presents a theoretical and computational study of the impact of the Rashba spin-orbit interaction (SOIR) on the transmission of Dirac fermions (fD) through a potential barrier in monolayer graphene. The channel interference was explicitly considered incorporating graphene, SOIR, and a potential barrier.
+        Our findings reveal that the presence of SOIR significantly modifies the electron transmission coefficients compared with pristine graphene conditions.
+        While electron transmission in pristine graphene remains near unity with minor reductions due to quantum interference effects in a Gaussian wave packet, introducing SOIR leads to intricate transmission patterns dependent on the barrier parameters and wave packet characteristics.
+        \textcolor{blue}{The quantum transport phenomena are further complicated by channel interference effects between the pseudospinor components $\Psi_A$ and $\Psi_B$, which manifest as cross-coupling terms in the probability current density and significantly influence the transmission characteristics.}
+        These effects arise from phenomena such as spin degeneracy lifting and spin-dependent scattering mechanisms.
+        The results emphasize the critical role that SOIR plays in engineering sophisticated quantum devices, offering potential applications in spintronic technologies and quantum computing.
+    \end{abstract}
+
+
+% Table of Contents (optional)
+%    \tableofcontents
+%    \newpage
+
+% Introduction
+
+
+    \section{Introduction}\label{sec:introduction}
+    \input{introduction}
+
+% Development
+
+    \section{Development}\label{sec:development}
+    \input{development02}
+
+
+    \section{Discussion of Results}\label{sec:discussion-of-results}
+    \input{discussion-of-results}
+
+
+    \section{Conclusions}\label{sec:conclusions}
+
+    In this work, we explored the effect of Rashba spin-orbit interaction (SOIR) on electronic transmission through a potential barrier in monolayer graphene using numerical simulations based on Gaussian wave packets and finite difference methods (FDM). The results revealed how the presence of the Rashba term introduces substantial and complex modifications to the transmission coefficients compared to the simple behavior observed in pristine graphene.
+    These variations originate from spin-dependent scattering mechanisms, such as spin degeneracy lifting and quantum interferences derived from the multiple components of the wave packets used in our simulations.
+    A key finding is the identification of channel interference effects between the pseudospinor components $\Psi_A$ and $\Psi_B$, which manifest as cross-coupling terms in the probability current density and fundamentally alter the transmission characteristics.
+
+    Regarding the questions initially posed in this study, we successfully demonstrated that SOIR interactions do significantly modify transmission characteristics, thus affirmatively answering our initial inquiries.
+    Additionally, we clarified that small deviations observed in pristine graphene from the theoretical unitary transmission are a direct consequence of the nature of the Gaussian packets employed, emphasizing the importance of considering these effects in simulations and practical applications.
+
+    Collectively, our findings clearly highlight that a detailed understanding of SOIR provides predictive capability and essential tools for the engineering of spintronic devices and platforms applicable to quantum computing.
+    Therefore, this study firmly reaffirms the relevance of these fundamental quantum phenomena in current and future technological scenarios.
+    Finally, we emphasize a key modeling choice: we neglect the canonical Dirac–Rashba term in pristine graphene because its magnitude is typically very small at the scales considered.
+    Nevertheless, giant Rashba couplings have been reported in proximity-engineered systems (e.g., graphene on TMDs or with Au), for which the canonical term should be included explicitly and its impact on wave-packet propagation assessed.
+    Extending our framework to that regime is straightforward (upgrade to a four-component spinor and add the Dirac–Rashba operator), and will be the subject of future work, where we will quantify the consequent spin splitting, spin precession, and possible Klein-to–anti-Klein transitions\cite{AvsarNatCommun2014, WangPhysRevX2016, DellAnnaJPhysCondMatt2018}.
+
+   % \pagebreak
+
+%% Acknowledgments
+%    \section*{Acknowledgments}
+
+\bibliographystyle{unsrt}
+\bibliography{bib/main}
+
+\end{document}
