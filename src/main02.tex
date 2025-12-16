@@ -1,12 +1,14 @@
-%! Author = Eduardo Serna
+%! Authors = Eduardo Serna & Leo Diago-Cisneros
 
 % Preamble
 \documentclass{../assets/templates/iopjournal}
+%\documentclass[twocolumn]{revtex4-2}
 
 % Packages
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathtools}
+\usepackage{amsmath,amssymb,graphicx,hyperref}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -20,7 +22,7 @@
 
 % Document
 \begin{document}
-\articletype{Paper}
+%\articletype{Paper}
 
     \title{Channel-Interference and Spin-Orbit effects on Quantum Tunneling in Mono-layer Graphene}
     
@@ -48,20 +50,18 @@
 %    \newpage
 
 % Introduction
-
     \section{Introductory Overview}\label{sec:introduction}
     \input{introduction02}
 
 % Development
-
     \section{Theoretical Development}\label{sec:development}
-    \input{development}
+    \input{development02}
 
-
+% Discussion
     \section{Discussion of Results}\label{sec:discussion-of-results}
-    \input{discussion-of-results}
+    \input{discussion02}
 
-
+% Conclusion
     \section{Concluding Remarks}\label{sec:conclusions}
 
     In this work, we explored the effect of Rashba spin-orbit interaction (SOIR) on electronic transmission through a potential barrier in monolayer graphene using numerical simulations based on Gaussian wave packets and finite difference methods (FDM). The results revealed how the presence of the Rashba term introduces substantial and complex modifications to the transmission coefficients compared to the simple behavior observed in pristine graphene.
@@ -72,15 +72,20 @@
     Additionally, we clarified that small deviations observed in pristine graphene from the theoretical unitary transmission are a direct consequence of the nature of the Gaussian packets employed, emphasizing the importance of considering these effects in simulations and practical applications.
 
     Collectively, our findings clearly highlight that a detailed understanding of SOIR provides predictive capability and essential tools for the engineering of spintronic devices and platforms applicable to quantum computing.
-    Therefore, this study firmly reaffirms the relevance of these fundamental quantum phenomena in current and future technological scenarios.
+    Therefore, this study firmly reaffirms the relevance of these fundamental quantum phenomena in current and future technological scenarios. 
+    
     Finally, we emphasize a key modeling choice: we neglect the canonical Dirac–Rashba term in pristine graphene because its magnitude is typically very small at the scales considered.
-    Nevertheless, giant Rashba couplings have been reported in proximity-engineered systems (e.g., graphene on TMDs or with Au), for which the canonical term should be included explicitly and its impact on wave-packet propagation assessed.
-    Extending our framework to that regime is straightforward (upgrade to a four-component spinor and add the Dirac–Rashba operator), and will be the subject of future work, where we will quantify the consequent spin splitting, spin precession, and possible Klein-to–anti-Klein transitions\cite{AvsarNatCommun2014, WangPhysRevX2016, DellAnnaJPhysCondMatt2018}.
+    Nevertheless, giant Rashba couplings have been reported in proximity-engineered systems (\textit{e.g.}, graphene on TMDs or with Au), for which the canonical term should be included explicitly and its impact on wave-packet propagation assessed.
+    Extending our framework to that regime is straightforward (upgrade to a four-component spinor and add the Dirac–Rashba operator), and will be the subject of future work, where we will quantify the consequent spin splitting, spin precession, and possible Klein-to–anti-Klein transitions \cite{AvsarNatCommun2014, WangPhysRevX2016, DellAnnaJPhysCondMatt2018}.
 
-   % \pagebreak
+% Acknowledgments
+%\section*{Acknowledgments}
+\ack{One of the authors (L.D-C) thanks for the support of DINVP and the hospitality of Departamento de Física y Matemáticas, Universidad Iberoamericana, Mexico City.}
 
-%% Acknowledgments
-%    \section*{Acknowledgments}
+\section*{Declaration on Generative AI}
+\label{sec:genai}
+
+This paper has been prepared with the assistance of several generative AI, for the sake of the grammar and clarity text improvements. Following the use of this tools, the authors thoroughly reviewed and edited the content as needed, and take full responsibility for the final version of the publication.
 
 \bibliographystyle{unsrt}
 \bibliography{bib/main}

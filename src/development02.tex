@@ -5,15 +5,12 @@ We model a nanoribbon formed by MLG encapsulated on hexagonal boron nitride and 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{../assets/images/GrapheneFinal}
-    \caption{Schematic representation of the layered-heterostructure device showing the SiO$_2$ capping layer (gray), the hexagonal boron nitride (transparent - text in orange), and the MLG (red) with a coordinate system. The inset shows the detailed atomic structure of the MLG. The plates A, B (yellow) constrain electrostatically the fD along the MLG nanoribbon (blue); meanwhile the electrode $V_{b}$ (yellow) induces a biased rectangular QB by means of a gate-voltage, which scatters fD that travel the MLG nanoribbon. Related setups and parameters were detailed by us previously\cite{Serna2019}.}
+    \caption{Schematic representation of the layered-heterostructure device showing the $SiO_2$ capping layer (gray), the hexagonal boron nitride (transparent - text in orange), and the MLG (red) with a coordinate system. The inset shows the detailed atomic structure of the MLG. The plates A, B (yellow) constrain electrostatically the fD along the MLG nanoribbon (blue); meanwhile the electrode $V_{b}$ (yellow) induces a biased rectangular QB by means of a gate-voltage, which scatters fD that travel the MLG nanoribbon. Related setups and parameters were detailed by us previously \cite{Serna2019}.}
     \label{fig:physical-model}
 \end{figure}
 
-Gating has been proven as an essential tool to unveil the exotic and unprecedented phenomena in graphene. With gating becomes possible to tune the Fermi energy as well as to create potential QBs in graphene\cite{Young2009}. Regarding the SOIR graphene Min et al. (Phys Rev. B 74, 165310 (2006)) consider that is reachable with an external electric field of the type used to manipulate the Fermi energy, that is, with standard gating. So, in principle, our top-gated layered-heterostructure device [see Fig.\ref{fig:physical-model}] is able to induce SOIR\cite{Serna2019}.
-Regarding that graphene is not longer pristine under gating, it is true, in fact it is well accepted that the Hamiltonian has three contributions: the pristine, Rashba and intrinsic SOC (Phys. Rev. B 87, 125405 (2013), Phys. Rev. B 74, 165310 (2006), Phys. Rev. B 85, 115439 (2012)). Even, by optimizing the substrate upon which graphene is deposited the Rashba term can be dominant (Phys. Rev. Lett. 101, 157601 (2008)). Moreover, if we have a potential barrier localized at certain region we have to add an extra diagonal term V(x). 
-In our case we are considering a Q1D system, and as far as we know there is no Hamiltonian reported so far that accounts for the Rashba SOC interaction under this dimensionality. So, we are assuming that the momentum dependence of the well-known Rashba Hamiltonian for Q1D semiconductor heterostructures (Rev. Cub. Fís. 27, 212 (2010), Eur. Phys. Lett. 110, 67001 (2015)), eqs. (3) and (4), can be extended to the context of Q1D graphene structures. 
-To what extent this assumption is correct or not it will depend on a formal derivation of the corresponding Hamiltonian under the geometrical and structural conditions of our system and/or experimental results that support or dismissed it. For the moment we are considering that the mentioned Hamiltonian captures the essential physics of our problem. In fact, the perfect backscattering that we found it is also reported by Dell’Anna et al. (J. Phys.: Condens. Matter 30, 415301 (2018)). In concrete, they find that by tuning the Rashba SOC interaction in monolayer graphene the transmission of charge carriers through a potential barrier can go from Klein tunneling to anti-Klein tunneling (perfect backscattering).
-
+Gating has been proven as an essential tool to unveil the exotic and unprecedented phenomena in graphene. With gating becomes possible to tune the Fermi energy as well as to create potential QBs in graphene\cite{Young2009}. Regarding the SOIR graphene Min \textit{et al.} \cite{Min2006} consider that is reachable with an external electric field of the type used to manipulate the Fermi energy, that is, with standard gating. So, in principle, our top-gated layered-heterostructure device [see Fig.\ref{fig:physical-model}] is able to induce SOIR\cite{Serna2019}.
+Regarding that graphene is not longer pristine under gating, it is true, in fact it is well accepted that the Hamiltonian has three contributions: the pristine, Rashba and intrinsic SOC \cite{Qiao2012, Qiao2013, Min2006}. Even, by optimizing the substrate [$SiO_2$ capping layer (gray); see Fig.\ref{fig:physical-model}] upon which graphene is deposited, the Rashba term can be dominant \cite{Varykhalov2008}. Moreover, if we have a potential QB barrier localized at a certain region over the graphene strip and induced electrostatically by the electrode $V_{b}$ [see the yellow central plate on top of Fig.\ref{fig:physical-model}]; we have to add an extra diagonal term $V(x)$, as shown in the next subsection. In our case we are considering a Q1D MLG system [see the blue strip of Fig.\ref{fig:physical-model}], so for this dimensionality we are assuming that the momentum dependence of the well-known Rashba Hamiltonian for Q1D semiconductor heterostructures \cite{RDiago2010, RCDiagoEPL2015}, can be extended to the context of a Q1D MLG system, as that of the proposed layered-heterostructure device schematized in Fig.\ref{fig:physical-model}, as it captures the essential Physics of the envisioned task in the present study. 
 
 \subsection{Mathematical Model}\label{subsec:mathematical-model}
 
@@ -25,17 +22,15 @@ Starting with the pristine graphene Hamiltonian\cite{Geimk2007}:
     \label{eq:pristGr}
     \hat{\bn{H}}_G = v_{\mb{\tiny F}}\vec{\mathbf{\sigma}}\cdot\vec{p},
 \end{equation}
-
 \noindent with $\vec{\mathbf{\sigma}} = \hat{\mathbf{\sigma}}_{x}\hat{\imath} + \hat{\mathbf{\sigma}}_{y}\hat{\jmath}$, being the pseudospin Pauli matrices $\hat{\mathbf{\sigma}}_{x} = \bigl(\begin{smallmatrix}
 0&1 \\ 1&0
 \end{smallmatrix} \bigr)$, $\hat{\sigma}_{y} = \bigl(\begin{smallmatrix}
                                                          0&-i \\ i&0
 \end{smallmatrix} \bigr)$, and $\vec{p}=\hat{p}_{x}\hat{\imath}+\hat{p}_{y}\hat{\jmath}$, the momentum operator, which $x, y$ components read $\hat{p}_{x} = -i\hbar\frac{\partial}{\partial x}$ and $\hat{p}_{y} = -i\hbar\frac{\partial}{\partial y}$, respectively.
 
-The standard Rashba coupling for MLG (often written, in a four-component basis, as $\hat{H}_{\mathrm{DR}}=\lambda_R(\sigma_x s_y-\sigma_y s_x)$, with $s_i$ Pauli matrices in real-spin space) is generally very weak in pristine samples. In our baseline configuration (pristine regions), we therefore neglect $\hat{H}_{\mathrm{DR}}$, consistent with typical estimates where $\lambda_R \ll \hbar v_F k_0$ and $\lambda_R \ll V_b$ at the scales of interest. By contrast, in proximity-engineered heterostructures (e.g., graphene on TMDs or with Au), $\lambda_R$ can be enhanced to meV scales\cite{AvsarNatCommun2014, WangPhysRevX2016}.
+The standard Rashba coupling for MLG (often written, in a four-component basis, as $\hat{H}_{\mathrm{DR}}=\lambda_R(\sigma_x s_y-\sigma_y s_x)$, with $s_i$ Pauli matrices in real-spin space) is generally very weak in pristine samples. In our baseline configuration (pristine regions), we therefore neglect $\hat{H}_{\mathrm{DR}}$, consistent with typical estimates where $\lambda_R \ll \hbar v_F k_0$ and $\lambda_R \ll V_b$ at the scales of interest. By contrast, in proximity-engineered heterostructures [\textit{e.g.}, graphene on transition metal dichalcogenides (TMDs) or with $Au$], $\lambda_R$ can be enhanced to meV scales \cite{AvsarNatCommun2014, WangPhysRevX2016}.
 
 In such cases, the canonical Dirac--Rashba term must be explicitly included in the Hamiltonian (together with the corresponding four-component spinor structure), and its consequences on wave-packet dynamics and transmission should be analyzed. We delineate this extension at the end of this subsection.
-
 
 From this point forward, $v_{\mb{\tiny F}}$ stands for the Fermi velocity of the carriers in MLG, which satisfies
 
@@ -43,9 +38,7 @@ From this point forward, $v_{\mb{\tiny F}}$ stands for the Fermi velocity of the
     \label{eq:vF}
     v_{\mb{\tiny F}} \approx \frac{c}{300}.
 \end{equation}
-This order-of-magnitude estimate is widely used for graphene\cite{Geimk2007}.
-
-The previous Hamiltonian can be rewritten as:
+This order-of-magnitude estimate is widely used for graphene\cite{Geimk2007}. The previous Hamiltonian can be expressed in the form 
 
 \begin{equation}
     \label{eq:pristineGrapheneMatrix}
@@ -56,7 +49,7 @@ The previous Hamiltonian can be rewritten as:
     \end{pmatrix}.
 \end{equation}
 
-Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (quasi-one dimensional) semiconductor hetero-structures can be extended to the context of MLG-Q1D\cite{RDiago2010, Serna2019, RCDiagoEPL2015}, it follows that the Hamiltonian for the SOIR can be written as:
+Based upon elucidations discussed above in subsection \ref{subsec:physical-model}, we take for granted that the momentum-dependent term of the Rashba Hamiltonian for Q1D semiconductor hetero-structures can be extended to the context of a Q1D-MLG \cite{RDiago2010, Serna2019, RCDiagoEPL2015}, thereby it follows that the Hamiltonian for the SOIR can be written as
 
 \begin{equation}
     \label{eq:SOIRHamiltonian}
@@ -66,31 +59,21 @@ Assuming that the momentum-dependent term of the Rashba Hamiltonian for Q1D (qua
         k_{\alpha+} + k_{\beta+} & 0
     \end{pmatrix},
 \end{equation}
+\noindent where $k_{\alpha\pm} = \alpha\left(k_{\pm}^2/k_{\mp}\right)$ and $k_{\beta\pm} = \beta k_{\pm}^3$; also defining that $k_{\pm}=k_x\pm i k_y$ which are the initial wave numbers of the system.
+The symbols $\alpha$ and $\beta$ represent the coupling strength parameters for linear and cubic SOIR contributions, respectively.
 
-\noindent Where $k_{\alpha\pm} = \alpha\left(k_{\pm}^2/k_{\mp}\right)$ and $k_{\beta\pm} = \beta k_{\pm}^3$; also defining that $k_{\pm}=k_x\pm i k_y$ which are the initial wave numbers of the system.
-The symbols $\alpha$ and $\beta$ represent the linear and cubic contribution of the SOIR respectively.
+Following the symmetry-based arguments and k\,$\cdot$\,p analysis summarized in Ref.~\cite{Serna2019} and the derivation for 1D-confined heavy holes in Ref.~\cite{RCDiagoEPL2015}, the leading Rashba invariants under structural inversion asymmetry and quasi-1D confinement produce off-diagonal momentum structures combining a term proportional to $k_{\pm}^2/k_{\mp}$ and a cubic term proportional to $k_{\pm}^3$. Our model adopts precisely these invariants as an \emph{effective} SOIR inside the QB region to emulate strong spin--momentum coupling under inversion asymmetry and transverse-mode selection ($k_y\!\to\!0$).
+This transfer of functional form is justified at the level of symmetry and low-energy gradient expansion: (i) the barrier region breaks inversion along $z$, (ii) transport is operated near a single transverse mode (Q1D), and (iii) only in-barrier states feel the effective SOIR\@. Therefore, employing the heavy-hole Rashba Hamiltonian as an effective barrier term in our Q1D graphene setup is consistent with the arguments reviewed in Ref. \cite{Serna2019} and the construction in Ref. \cite{RCDiagoEPL2015}.
 
-\textcolor{red}{Following the symmetry-based arguments and k\,$\cdot$\,p analysis summarized in Ref.~\cite{Serna2019} and the derivation for 1D-confined heavy holes in Ref.~\cite{RCDiagoEPL2015}, the leading Rashba invariants under structural inversion asymmetry and quasi-1D confinement produce off-diagonal momentum structures combining a term proportional to $k_{\pm}^2/k_{\mp}$ and a cubic term proportional to $k_{\pm}^3$.
-Our model adopts precisely these invariants as an \emph{effective} SOIR inside the barrier region to emulate strong spin--momentum coupling under inversion asymmetry and transverse-mode selection ($k_y\!\to\!0$).
-This transfer of functional form is justified at the level of symmetry and low-energy gradient expansion: (i) the barrier region breaks inversion along $z$, (ii) transport is operated near a single transverse mode (Q1D), and (iii) only in-barrier states feel the effective SOIR\@.
-Therefore, employing the heavy-hole Rashba Hamiltonian as an effective barrier term in our Q1D graphene setup is consistent with the arguments reviewed in Ref. \cite{Serna2019} and the construction in Ref. \cite{RCDiagoEPL2015}.}
+\input{alphabeta02}
 
-\input{alpha-beta-values-en}
-
-%We are also taking into account that $\alpha = -\beta$, following the conclusions presented by Wong and Mireles\cite{WongUNAM2005}.
-
-\textcolor{red}{For this research, we do not change the carrier type (Dirac fermions); rather, we assume that only the barrier region hosts an effective Rashba-like SOIR with the momentum dependence in Eq.~\eqref{eq:SOIRHamiltonian}, while pristine regions remain Rashba-free.}
-
-The potential barrier is defined only in the specified region.
-
-With the following Hamiltonian:
+It is useful to remark that for this research, we do not change the well-known spin-charge carrier type,\textit{ i.e.} the fD. Rather, we assume that only the QB region hosts an effective SOIR acting on heawy holes \cite{Serna2019}, with momentum dependence as shown in Eq.~\eqref{eq:SOIRHamiltonian}, while pristine regions remain SOIR-free, for none-scattered propagating electrons. It is simple that the QB energy operator goes along with 
 
 \begin{equation}
     \label{eq:potentialBarrierHamiltonian}
-    \hat{\bn{H}}_V=\bn{I}_2 V(x)
+    \hat{\bn{H}}_V = \bn{I}_2 V(x),
 \end{equation}
-
-Adding up the graphene\eqref{eq:pristineGrapheneMatrix}, the SOIR\eqref{eq:SOIRHamiltonian}, and the potential barrier\eqref{eq:potentialBarrierHamiltonian} Hamiltonians, while also zeroing the parameters in the $y$ direction, we get:
+being $\bn{I}_2$ the $(2\times 2)$ identity matrix. Adding up the pristine graphene \eqref{eq:pristineGrapheneMatrix}, the SOIR \eqref{eq:SOIRHamiltonian}, and the potential QB \eqref{eq:potentialBarrierHamiltonian} terms, the Hamiltonians, 
 
 \begin{equation}
     \label{eq:hybridHamiltonian}
@@ -103,17 +86,18 @@ Adding up the graphene\eqref{eq:pristineGrapheneMatrix}, the SOIR\eqref{eq:SOIRH
 
 Note that if we wanted to see the results in the $y$ direction, we would have to zero the partial derivatives of $x$.
 
-If the experimental context implies a giant Rashba coupling (e.g., proximity to TMDs, Au intercalation/adatoms), the Hamiltonian should be augmented to
+If the experimental context implies a giant Rashba coupling (\textit{e.g.}, proximity to TMDs, Au intercalation/adatoms), the Hamiltonian should be augmented to
 (i) a four-component spinor (sublattice $\otimes$ real spin) and
 (ii) include $\hat{H}_{\mathrm{DR}}=\lambda_R(\sigma_x s_y-\sigma_y s_x)$ along with $\hat{\bn{H}}_G$ and the electrostatic potential.
 Within our time-evolution framework, this amounts to propagating a four-component Gaussian wave packet under the enlarged $4\times 4$ operator (the finite-difference machinery and stability criteria carry over directly).
-Qualitatively, one should then expect pronounced spin splitting, spin precession inside and near the barrier, spin-dependent resonant features, and the possibility of transitions between Klein and anti-Klein tunneling regimes under suitable parameters\cite{DellAnnaJPhysCondMatt2018, AvsarNatCommun2014, WangPhysRevX2016}.
+Qualitatively, one should then expect pronounced spin splitting, spin precession inside and near the barrier, spin-dependent resonant features, and the possibility of transitions between Klein and anti-Klein tunneling regimes under suitable parameters \cite{DellAnnaJPhysCondMatt2018, WangPhysRevX2016}.
 
-This is the basis of a more general model that can be explored in future work, particularly in light of recent experimental advances in engineering strong Rashba coupling in graphene-based heterostructures\cite{ManchonNatureMater2015}.
+This is the basis of a more general model that can be explored in future work, particularly in light of recent experimental advances in engineering strong Rashba coupling in graphene-based heterostructures \cite{ManchonNatureMater2015}.
 
 \subsection{Quasi-1D confinement and sub-band hybridization}\label{subsec:q1d-confinement-hybridization}
+
 We model transport along $x$ under quasi-one-dimensional (Q1D) conditions produced by a transverse ($y$) electrostatic confinement that creates discrete transverse modes.
-In practice, this can be achieved by electrostatic guiding (smooth $p$-$n$-$p$ profiles or split-gate definition) or narrow channels, leading to a ladder of sub-bands indexed by $n$ in the $y$ direction\cite{Young2009, ParedesPhysRevB2021, TrauzettelNature2007}.
+In practice, this can be achieved by electrostatic guiding (smooth $p$-$n$-$p$ profiles or split-gate definition) or narrow channels, leading to a ladder of sub-bands indexed by $n$ in the $y$ direction \cite{Young2009, ParedesPhysRevB2021, TrauzettelNature2007}.
 Two limiting parametrizations are useful for estimates:
 (i) hard-wall guiding of width $W$, where the transverse quantization gives $k_{y,n}\approx (n+\delta)\pi/W$ and a sub-band spacing $\Delta_y\sim \hbar v_F\pi/W$ between $n=0$ and $n=1$; and
 (ii) approximately parabolic electrostatic confinement characterized by $\hbar\omega_y$, yielding a mode spacing $\Delta_y\simeq \hbar\omega_y$.
@@ -132,7 +116,7 @@ Sub-band hybridization can become important if (a) the confinement is weak (smal
 In such regimes, one must retain the full 2D problem or expand the spinor in transverse eigenmodes,
 $\Psi(x,y,t)=\sum_n \chi_n(y)\, \varphi_n(x,t)$,
 leading to coupled 1D channel equations with inter-mode couplings determined by $V(x,y)$ and Rashba matrix elements.
-Hybridization then yields avoided crossings and multi-channel resonances in transmission (Fano-like features), and the effective single-channel picture no longer applies\cite{MiroshnichenkoRevModPhys2010}.
+Hybridization then yields avoided crossings and multi-channel resonances in transmission (Fano-like features), and the effective single-channel picture no longer applies\cite{Miroshnichenko2010}.
 
 We have verified that the parameter sets used in this work satisfy the single-mode criteria above, ensuring that (i) only the lowest transverse mode is appreciably occupied at injection and (ii) inter-subband couplings driven by the barrier and Rashba terms remain negligible.
 Consequently, the confinement term is justified and sub-band hybridization does not alter our conclusions within the explored parameter window.
@@ -142,11 +126,11 @@ Note that if we wanted to see the results in the $y$ direction, we would have to
 
 \subsection{Finite differences scheme}\label{subsec:finite-differences-scheme}
 
-The main equation to solve is the time-dependent eigenvalue equation:
+The main equation to solve is the time-dependent eigenvalue equation
 
 \begin{equation}
     \label{eq:schrodingerTimeDependent}
-    i\hbar \frac{d}{dt}\bn{\Psi}(x,t) = \hat{\bn{H}}\bn{\Psi}(x,t)
+    i\hbar \frac{d}{dt}\bn{\Psi}(x,t) = \hat{\bn{H}}\bn{\Psi}(x,t).
 \end{equation}
 
 In our case, we consider a Gaussian wave packet (GWP) for each component of the pseudospinor $\bn{\Psi}(x,t)=\begin{psmallmatrix*}
@@ -156,10 +140,9 @@ The GWP at an initial time has the following form:
 
 \begin{equation}
     \label{eq:GWP}
-    \psi_j(x,t_0)=\frac{\xi_j}{\sqrt[4]{\pi\sigma^2}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}e^{ixk_0}
+    \psi_j(x,t_0)=\frac{\xi_j}{\sqrt[4]{\pi\sigma^2}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}e^{ixk_0},
 \end{equation}
-
-\noindent Where $\xi$ is the initial configuration of the pseudospinor, $k_0$ is the initial wave number in $x$, and the subscript $j$ indicates the component being used.
+\noindent where $\xi$ is the initial configuration of the pseudospinor, $k_0$ is the initial wave number in $x$, and the subscript $j$ indicates the component being used.
 
 For the development of this article, we are using the following pseudospinor configuration options:
 
@@ -176,13 +159,13 @@ For the development of this article, we are using the following pseudospinor con
     \end{pmatrix}.
 \end{equation}
 
-The wave packet is then defined as follows:
+The wave packet is then defined as follows
 
 \begin{equation}
     \label{eq:FinalGWP}
     \bn{\Psi}(x,0)=\frac{1}{\sqrt {\xi_A^2 + \xi_B^2}}\begin{pmatrix}
                                                           \psi_A\\\psi_B
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{equation}
 
 For the probability density calculated below, we use the following definition:
@@ -193,31 +176,29 @@ For the probability density calculated below, we use the following definition:
 \end{equation}
 
 \subsection{Temporal Evolution Operator}\label{subsec:temporal-evolution-operator}
-To solve the eigenvalue equation\eqref{eq:schrodingerTimeDependent}, we propose using a temporal evolution operator (TEO), based on the following equation:
+To solve the eigenvalue equation\eqref{eq:schrodingerTimeDependent}, we propose using a temporal evolution operator (TEO), based on the following equation
 
 \begin{equation}
     \label{eq:TEOdifEq}
-    \bn{\Psi}(x,t)=\hat{U}(t,t_0)\bn{\Psi}(x,t_0)
+    \bn{\Psi}(x,t)=\hat{U}(t,t_0)\bn{\Psi}(x,t_0).
 \end{equation}
 
 \noindent We can see that by applying the operator, we obtain a time $t$ from an initial time $t_0$.
 If we substitute the TEO equation\eqref{eq:TEOdifEq} into the eigenvalue equation\eqref{eq:schrodingerTimeDependent}, we can develop the algebra and solve the differential equation to obtain the TEO\@.
-Since the Hamiltonian does not depend on time, we can rewrite eq.\eqref{eq:TEOdifEq} as:
+Since the Hamiltonian does not depend on time, we can rewrite eq.\eqref{eq:TEOdifEq} as
 
 \begin{equation}
     \label{eq:TEOApplied}
-    \bn{\Psi}(x,t)= e^{-\frac{i\delta t}{\hbar}\hat{\bn{H}}} \bn{\Psi}(x,t_0)
+    \bn{\Psi}(x,t)= e^{-\frac{i\delta t}{\hbar}\hat{\bn{H}}} \bn{\Psi}(x,t_0),
 \end{equation}
-
-\noindent Where $\delta t$ is the time step that we will discretize later.
-The previous exponential can be approximated through the first-order Taylor series as:
+\noindent where $\delta t$ is the time step that we will discretize later. The previous exponential can be approximated through the first-order Taylor series as
 
 \begin{equation}
     \label{eq:cayleyApprox}
-    e^{-\frac{i\delta t}{\hbar}\hat{\bn{H}}} = \frac{2}{\bn{I} + \frac{i\delta t}{2\hbar}\hat{\bn{H}}}-\bn{I}
+    e^{-\frac{i\delta t}{\hbar}\hat{\bn{H}}} = \frac{2}{\bn{I} + \frac{i\delta t}{2\hbar}\hat{\bn{H}}}-\bn{I}.
 \end{equation}
 
-Using a change of variable, we can rewrite the previous equation\eqref{eq:cayleyApprox} as:
+Using a change of variable, we can rewrite the previous equation\eqref{eq:cayleyApprox}, \textit{i.e.}
 
 \begin{equation}
     \label{eq:systemOfEquations}
@@ -229,14 +210,14 @@ Using a change of variable, we can rewrite the previous equation\eqref{eq:cayley
 Since both equations have derivatives, we use the finite difference method to solve both equations for the entire space simultaneously.
 To do this, we first discretize the system of equations\eqref{eq:systemOfEquations} along the entire space $j$ from $0$ to $J$.
 
-To maintain the stability of the numerical analysis in the finite difference method, the following condition must be respected\cite{Carrillo2015}:
+To maintain the stability of the numerical analysis in the finite difference method, the following condition must be respected \cite{Carrillo2015}
 
 \begin{equation}
     \label{eq:stabilityCondition}
     \delta t \leq \frac{\left( \delta x \right)^2}{2}
 \end{equation}
 
-To discretize the derivatives, we use the Taylor series expansion up to the first degree for the point $x_j$ forward and backward:
+To discretize the derivatives, we use the Taylor series expansion up to the first degree for the point $x_j$ forward and backward
 
 \begin{align}
     \label{eq:TaylorBeforeAndAfter}
@@ -245,20 +226,19 @@ To discretize the derivatives, we use the Taylor series expansion up to the firs
     f(x_j-\delta x)&=f(x_j) + (x_j-\delta x-x_j)f'(x_j)\nonumber\\
     &=f(x_j)-\delta xf'(x_j),
 \end{align}
-
-\noindent if we subtract the second equation from the first and solve for $f'(x_j)$, we can find the ``Central Differences'' which we can also discretize as:
+\noindent if we subtract the second equation from the first and solve for $f'(x_j)$, we can find the ``Central Differences'' which we can also e discretized as
 
 \begin{equation}
     \label{eq:diferenciasCentradas}
-    f'(x_j)=\frac{f(x_j+\delta x)-f(x_j-\delta x)}{2\delta x} = \frac{f_{j+1}-f_{j-1}}{2\delta x}
+    f'(x_j)=\frac{f(x_j+\delta x)-f(x_j-\delta x)}{2\delta x} = \frac{f_{j+1}-f_{j-1}}{2\delta x}.
 \end{equation}
 
-In this way, we can rewrite our system of equations, once the discretization and algebraic development of the matrix have been performed:
+In this way, we can rewrite our system of equations, once the discretization and algebraic development of the matrix have been performed
 
 \begin{equation}
         \label{eq:partA}
     \phi_{A, j} + \frac{i\delta t}{2\hbar}(V_j\phi_{A,j} + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\phi_{B,j}-
-    i\hbar v_{\mb{\tiny F}}\frac{\phi_{B, j+1}-\phi_{B, j-1}}{2\delta x}) = 2\psi_{A,j}
+    i\hbar v_{\mb{\tiny F}}\frac{\phi_{B, j+1}-\phi_{B, j-1}}{2\delta x}) = 2\psi_{A,j},
 \end{equation}
 
 \begin{equation}
@@ -267,8 +247,7 @@ In this way, we can rewrite our system of equations, once the discretization and
     i\hbar v_{\mb{\tiny F}}\frac{\phi_{A, j+1}-\phi_{A, j-1}}{2\delta x}) = 2\psi_{B,j}
 \end{equation}
 
-If we add Eq.\eqref{eq:partA} and Eq.\eqref{eq:partB}:
-
+If we add eq.\eqref{eq:partA} and eq.\eqref{eq:partB} it gets
 
 \begin{align}
     \label{eq:temporaryEquation}
@@ -305,78 +284,63 @@ If we add Eq.\eqref{eq:partA} and Eq.\eqref{eq:partB}:
                      \phi_{B,2} \\
                      \vdots     \\
                      \phi_{B,J}
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align}
-
-
 \noindent where $N =1 + \frac{i\delta t}{2\hbar} \left( V_j + \left(k_{\alpha+,j}+k_{\beta+,j}\right)\right)$, $Q=\frac{i\hbar v_{\mb{\tiny F}}}{2\delta x}$ and $M =1 + \frac{i\delta t}{2\hbar}\left( V_j + \left(k_{\alpha-,j}+k_{\beta-,j}\right)\right)$.
 
-As can be seen, the size of the matrix depends on the size of our system.
-If we choose $\delta x = 1\angstrom$, then a quantum well of $1200\angstrom$ will generate a matrix of $1200\times1200$.
+As can be seen, the size of the matrix depends on the size of our system. If we choose $\delta x = 1\angstrom$, then a quantum well of $1200\angstrom$ will generate a matrix of $1200\times1200$. We repeat the previous procedure but now subtracting eq.\eqref{eq:partA} and Eq.\eqref{eq:partB}.
 
-We repeat the previous procedure but now subtracting Eq.\eqref{eq:partA} and Eq.\eqref{eq:partB}
-
-Looking at these matrices, we can redefine them as two simple matrix equations $2\psi_+=\mathbb{N}\phi_A+\mathbb{M}\phi_B$ and $2\psi_-=\mathbb{L}\phi_A+\mathbb{P}\phi_B$.
-These equations can be treated as a system of matrix equations that are solved as follows:
+Looking at these matrices, we can redefine them as two simple matrix equations $2\psi_+=\mathbb{N}\phi_A+\mathbb{M}\phi_B$ and $2\psi_-=\mathbb{L}\phi_A+\mathbb{P}\phi_B$. These equations can be treated as a system of matrix equations that are solved as comes after
 
 \begin{align}
     \label{eq:sistemaMatricial}
     \phi_A&=(2\mathbb{N}^{-1})\psi_+-(\mathbb{N}^{-1}\mathbb{M})\phi_B\nonumber\\
-    \phi_B&=2(-\mathbb{L}\mathbb{N}^{-1}\mathbb{M}+\mathbb{P})^{-1}(\psi_--\mathbb{L}\mathbb{N}^{-1}\psi_+)
+    \phi_B&=2(-\mathbb{L}\mathbb{N}^{-1}\mathbb{M}+\mathbb{P})^{-1}(\psi_--\mathbb{L}\mathbb{N}^{-1}\psi_+).
 \end{align}
 
-Once we have the discretized system of equations, the temporal evolution can be calculated with:
+Once we have the discretized system of equations, the temporal evolution can be calculated with
 
 \begin{equation}
     \label{eq:siguienteTiempo}
-    \Psi_j^{n+1}=\Phi_j^n-\Psi_j^n
+    \Psi_j^{n+1}=\Phi_j^n-\Psi_j^n,
 \end{equation}
-
-Repeating the process for each $n$ until reaching $N$.
+repeating the process for each $n$ until reaching $N$.
 
 \subsection{Probability Current Density}\label{subsec:probability-current-density}
 
-Once we have the temporal evolution, we can calculate its transmission coefficient from the calculation of the probability current density (PCD).
-To find this current, we start from the following continuity equation:
+Once we have the temporal evolution of fD, we can next calculate their transmission coefficients from the calculation of the probability density current. To quote this quantity, we start from the continuity equation as expected, thus
 
 \begin{equation}
     \label{eq:continuidad}
-    \frac{\partial\rho}{\partial t} + \nabla\cdot\vec{j}=0
+    \frac{\partial\rho}{\partial t} + \nabla\cdot\vec{j} = 0.
 \end{equation}
 
-Applying the conjugate transpose to the time-dependent eigenvalue equation\eqref{eq:schrodingerTimeDependent}, and multiplying on the right by $\Psi$, we can incorporate the probability density equation\eqref{eq:probDens}.
-At the same time, we consider the graphene Hamiltonian\eqref{eq:pristGr}, which we know is Hermitian since it is composed of Pauli matrices.
-In this way, we can construct the following equation:
+Applying the transpose-conjugate to the time-dependent eigenvalue equation \eqref{eq:schrodingerTimeDependent}, and multiplying on the right by $\Psi$, we can incorporate the probability density equation \eqref{eq:probDens}. At the same time, we consider the graphene Hamiltonian \eqref{eq:pristGr} and its Hermiticity, to built up the following equation
 
 \begin{equation}
     \label{eq:rho_sigma_nabla}
-    \frac{\partial}{\partial t}\int\rho d\vec{r} = -v_f\int\left( \Psi\vec{\sigma}\cdot\nabla\Psi^{T*} + \Psi^{T*}\vec{\sigma}\cdot\nabla\Psi \right)d\vec{r}
+    \frac{\partial}{\partial t}\int\rho d\vec{r} = -v_f\int\left( \Psi\vec{\sigma}\cdot\nabla\Psi^{T*} + \Psi^{T*}\vec{\sigma}\cdot\nabla\Psi \right)d\vec{r},
 \end{equation}
-
-We can rewrite the equation by factoring out $\nabla$ and removing the integral from both sides:
+which is rewritten as goes shortly after, by factorizing out $\nabla$ and dealing with the integral at both sides. Indeed
 
 \begin{equation}
     \label{eq:casi_j}
-    \frac{\partial}{\partial t}\rho = -v_f\nabla\cdot\left( \Psi^\dagger \vec{\sigma} \Psi \right)
+    \frac{\partial}{\partial t}\rho = -v_f\nabla\cdot\left( \Psi^\dagger \vec{\sigma} \Psi \right).
 \end{equation}
 
-Substituting into the continuity equation of probability density eq.\eqref{eq:continuidad}:
+Then, substituting into \eqref{eq:continuidad}, lead us to 
 
 \begin{equation}
     \label{eq:nablaJ}
-    \nabla\cdot\vec{j} = v_f\nabla\cdot\left( \Psi^\dagger \vec{\sigma} \Psi \right)
+    \nabla\cdot\vec{j} = v_f\nabla\cdot\left( \Psi^\dagger \vec{\sigma} \Psi \right),
 \end{equation}
-
-Eliminating $\nabla$ from both sides:
+and therefore it is straightforward that 
 
 \begin{equation}
     \label{eq:final}
-    \vec{j} = v_f\Psi^\dagger \vec{\sigma} \Psi
+    \vec{j} = v_f\Psi^\dagger \vec{\sigma} \Psi,
 \end{equation}
-
-In this way, we have obtained the probability current density in graphene.
-
-If we want to obtain the components of the current density, we can do it as follows:
+is the probability density current in graphene-based physical systems, we were looking at. If we want now to obtain the components of the probaility density current for fD propagating flux, we can do it in such a way
 
 \begin{equation}
     \label{eq:componentes}
@@ -384,12 +348,11 @@ If we want to obtain the components of the current density, we can do it as foll
                      \Psi^\dagger \sigma_x \Psi \\ \Psi^\dagger \sigma_y \Psi
     \end{pmatrix} = v_f\begin{pmatrix}
                            \Psi_A^\dagger\Psi_B + \Psi_B^\dagger\Psi_A \\ i(-\Psi_A^\dagger\Psi_B + \Psi_B^\dagger\Psi_A)
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{equation}
 
-The importance of the current vector expression, shown explicitly in equation\eqref{eq:componentes}, lies in the detailed understanding of the pseudospin behavior of graphene.
-The clear characterization of both components of the current vector is central to interpreting the numerical results and understanding the phenomenology associated with transport in these structures.
-Particularly significant are the cross-coupling terms $\Psi_A^\dagger\Psi_B + \Psi_B^\dagger\Psi_A$ that represent channel interference effects between the two pseudospinor components, which fundamentally influence the quantum transport properties.
+The importance of the later expression \eqref{eq:componentes}, lies in the detailed understanding of the fD´s pseudospin behavior in  graphene-based systems. The clear characterization of both components of \eqref{eq:componentes} is central for the interpretation of the numerical results and for understanding the phenomenology associated with quantum transport in these structures.
+Particularly significant are the cross-coupling terms $\Psi_A^\dagger\Psi_B + \Psi_B^\dagger\Psi_A$ that represent CI effects between the two pseudospinor components, which fundamentally influence the quantum transport properties.
 
 As a verification, if we consider an incident plane wave function, we can express it as:
 
