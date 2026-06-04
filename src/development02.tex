@@ -295,8 +295,20 @@ Looking at these matrices, we can redefine them as two simple matrix equations $
 \begin{align}
     \label{eq:sistemaMatricial}
     \phi_A&=(2\mathbb{N}^{-1})\psi_+-(\mathbb{N}^{-1}\mathbb{M})\phi_B\nonumber\\
-    \phi_B&=2(-\mathbb{L}\mathbb{N}^{-1}\mathbb{M}+\mathbb{P})^{-1}(\psi_--\mathbb{L}\mathbb{N}^{-1}\psi_+).
+    \phi_B&=2\,\mathbb{S}^{-1}\bigl(\psi_--\mathbb{L}\,\mathbb{N}^{-1}\psi_+\bigr),
 \end{align}
+\noindent where $\mathbb{S}=\mathbb{P}-\mathbb{L}\,\mathbb{N}^{-1}\mathbb{M}$ is the Schur complement of $\mathbb{N}$ in the $2\times2$ block operator associated with system \eqref{eq:temporaryEquation}.
+
+\paragraph{Sparse assembly and Schur-complement solver.}
+The tridiagonal structure of $\mathbb{N}$, $\mathbb{M}$, $\mathbb{L}$, $\mathbb{P}$ makes any explicit inversion $\mathbb{N}^{-1}$ or $(\mathbb{P}-\mathbb{L}\mathbb{N}^{-1}\mathbb{M})^{-1}$ both memory-prohibitive and numerically wasteful for the grid sizes used here ($J\sim 10^{3}$--$10^{4}$ points). We therefore assemble all four block matrices in compressed sparse row (CSR) format and replace the explicit inverses in Eq.~\eqref{eq:sistemaMatricial} by sparse $LU$ factorizations: one for $\mathbb{N}$ and one for the Schur complement $\mathbb{S}=\mathbb{P}-\mathbb{L}\,\mathbb{N}^{-1}\mathbb{M}$. Each application of $\mathbb{N}^{-1}$ or $\mathbb{S}^{-1}$ during the time loop is then performed as a back-substitution against the precomputed $LU$ factors, so that the algebra of Eq.~\eqref{eq:sistemaMatricial} is preserved while the per-step cost scales linearly with $J$ rather than $J^{3}$.
+
+\paragraph{Absorbing boundary conditions.}
+Because the GWP eventually reaches the box edges, the periodic/Dirichlet truncation of the finite-difference grid produces spurious reflections that contaminate the long-time evolution and, in particular, the post-barrier flux used to compute the transmission coefficient. To suppress these reflections we augment the diagonal of $\hat{\bn{H}}$ with a Complex Absorbing Potential (CAP) localized in a layer of width $w_{\mathrm{CAP}}$ at each edge,
+\begin{equation}
+    \label{eq:CAP}
+    V_{\mathrm{CAP}}(x_j) = -\,i\,\eta\,\left(\frac{w_{\mathrm{CAP}}-d_j}{w_{\mathrm{CAP}}}\right)^{n},
+\end{equation}
+\noindent where $d_j$ is the distance of grid point $j$ from the nearest edge (only points with $d_j<w_{\mathrm{CAP}}$ are affected), $\eta>0$ sets the absorption strength, and $n$ (typically $n=2$) controls the smoothness of the ramp. The negative-imaginary diagonal entries make the augmented Hamiltonian non-Hermitian inside the absorbing layer, so that any probability density entering the layer decays exponentially in time and the reflection back into the physical region is reduced to a negligible level. In the interior of the box, the Hamiltonian remains Hermitian and the dynamics are unchanged.
 
 Once we have the discretized system of equations, the temporal evolution can be calculated with
 
@@ -391,6 +403,16 @@ To determine the numerical value of $\vec{\jmath}$, we identify the peaks in the
 Subsequently, we calculate the minima of the Gaussian curves to find the apparent width of the GWP. Finally, we locate two precise moments: immediately before the wave packet interacts with the potential barrier and the exact moment it has traversed the barrier.
 
 With the defined entry ($t_1$) and exit ($t_2$) times, we use Eq.\eqref{eq:componentes} for the entire space at each of these times.
+
+\paragraph{Rightward-flux selection for split wave packets.}
+A subtlety arises whenever the initial pseudospinor configuration is not aligned with a pure right-moving eigenstate of $\hat{\bn{H}}_G$. For configurations such as $\xi=(1,1)^{T}$, $(1,i)^{T}$ or $(1,e^{i\pi/4})^{T}$ in Eq.~\eqref{eq:pseudospinorConfigurations}, the initial GWP simultaneously populates right- and left-moving Dirac branches, so that the temporal evolution generates two counter-propagating sub-packets. In that case, a naive evaluation of $\int j_x\,dx$ over the incidence half-space mixes both sub-packets, and the left-moving component cancels part of the right-moving flux that is physically incident on the QB. To isolate the incident and transmitted rightward flux we therefore replace, in the evaluation of $\vec{\jmath}_{\mathrm{in}}\cdot\hat{n}$ and $\vec{\jmath}_{\mathrm{out}}\cdot\hat{n}$ used in Eq.~\eqref{eq:transmissionCoef}, the integrand $j_x$ by its positive part $\max\{j_x,0\}$ over the corresponding half-space,
+\begin{equation}
+    \label{eq:rightwardFlux}
+    J^{\rightarrow}_{\mathrm{in}}(t)=\int_{0}^{x_{b}^{-}}\max\{j_x(x,t),0\}\,dx,
+    \qquad
+    J^{\rightarrow}_{\mathrm{out}}(t)=\int_{x_{b}^{+}}^{L}\max\{j_x(x,t),0\}\,dx,
+\end{equation}
+\noindent where $x_{b}^{-}$ and $x_{b}^{+}$ denote the left and right edges of the QB. The entry and exit times $t_{1}$ and $t_{2}$ are then defined, respectively, as the instants that maximize $J^{\rightarrow}_{\mathrm{in}}(t)$ and $J^{\rightarrow}_{\mathrm{out}}(t)$. This positive-flux selection is equivalent to the standard definition for purely right-moving inputs (where $j_x\ge 0$ in the relevant region), but cleanly separates the transmitted current from the spurious left-moving cancellation when the GWP splits.
 
 With this, we can now calculate the transmission coefficient:
 
